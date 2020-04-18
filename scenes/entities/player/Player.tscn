@@ -74,7 +74,7 @@ acceleration = 0.0
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 7
+frame = 3
 playing = true
 
 [node name="EggSprite" type="Sprite" parent="." index="1"]

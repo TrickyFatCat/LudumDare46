@@ -9,10 +9,19 @@ const AIR_ACCELERATION : float = 5000.0
 var is_holding_egg : bool = false
 
 onready var EggSprite : Sprite = $EggSprite
+onready var egg_scene : PackedScene = preload("res://scenes/entities/player/Egg.tscn")
 
 
 func _ready() -> void:
 	Global.player = self
+
+
+func _input(event):
+	if InputHandler.is_shoot_pressed() and is_holding_egg:
+		set_is_holding_egg(false)
+		var egg_instance = egg_scene.instance()
+		egg_instance.global_position = EggSprite.global_position
+		get_parent().add_child(egg_instance)
 
 
 func calculate_direction_x() -> void:
@@ -20,9 +29,6 @@ func calculate_direction_x() -> void:
 
 
 func calculate_velocity_x(delta: float, direction: Vector2) -> void:
-	calculate_acceleration()
-	calculate_friction()
-	
 	if direction.x != 0 and abs(velocity.x) <= max_velocity:
 		velocity.x += acceleration * direction.x * delta
 		velocity.x = clamp(velocity.x, -max_velocity, max_velocity)

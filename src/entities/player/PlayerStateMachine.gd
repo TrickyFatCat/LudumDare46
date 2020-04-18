@@ -1,14 +1,13 @@
 extends StateMachine
 
-const COYOTE_JUMP_TIME : float = 0.1
+const COYOTE_JUMP_TIME : float = 0.085
 
-var is_holding_egg : bool = false 
-var is_coyote_time : bool = false
+var is_holding_egg : bool = false
+var was_on_floor : bool = false
 
 onready var Parent : Player = self.get_parent()
 onready var SpriteNode : AnimatedSprite = Parent.get_node("AnimatedSprite")
 onready var CoyoteTimer : Timer = $CoyoteTimer
-
 
 func _ready():
 	CoyoteTimer.wait_time = COYOTE_JUMP_TIME
@@ -23,14 +22,18 @@ func _ready():
 
 
 func _physics_process(delta) -> void:
+	was_on_floor = Parent.is_on_floor()
+	
 	if state == states.idle or state == states.run or state == states.fall or state == states.dash:
 		Parent.calculate_direction_x()
 		SpriteNode.flip_sprite(Parent.direction)
 	
+	Parent.calculate_friction()
+	Parent.calculate_acceleration()
 	Parent.calculate_velocity_x(delta, Parent.direction)
-	Parent.apply_gravity(delta)
+	if CoyoteTimer.is_stopped():
+		Parent.apply_gravity(delta)
 	Parent.move()
-	
 	check_states()
 
 
@@ -45,9 +48,10 @@ func check_states() -> void:
 			if Parent.direction.x == 0:
 				set_state_idle()
 			
-			if !Parent.is_on_floor():
-				is_coyote_time = true
+			if !Parent.is_on_floor() and was_on_floor:
+				print("Coyote")
 				CoyoteTimer.start()
+				Parent.velocity.y = 0
 		states.jump:
 			set_state_fall()
 		states.fall:
@@ -57,8 +61,6 @@ func check_states() -> void:
 					Parent.velocity.x = 0
 				else:
 					set_state_run()
-				
-				stop_coyote_timer()
 		states.dash:
 			pass
 		states.damaged:
@@ -79,31 +81,18 @@ func set_state_run() -> void:
 
 
 func set_state_jump() -> void:
-	if InputHandler.is_jump_pressed() and (Parent.is_on_floor() or is_coyote_time) and !Parent.is_holding_egg:
-		stop_coyote_timer()
-		Parent.activate_jump()
-		set_state(states.jump)
-		SpriteNode.play("jump")
-		
+	if InputHandler.is_jump_pressed():
+		if (Parent.is_on_floor() or !CoyoteTimer.is_stopped()) and !Parent.is_holding_egg:
+			Parent.activate_jump()
+			set_state(states.jump)
+			Parent.friction = 0
+			SpriteNode.play("jump")
 
 
 func set_state_fall() -> void:
 	if Parent.velocity.y > 0:
 		set_state(states.fall)
 		SpriteNode.play("fall")
-
-
-func stop_coyote_timer() -> void:
-	if is_coyote_time:
-		is_coyote_time = false
-		CoyoteTimer.stop()
-		print_debug("Stopping coyote time")
-
-
-func _on_CoyoteTimer_timeout():
-	print_debug("Hello")
-	is_coyote_time = false
-	set_state_fall()
 
 
 
