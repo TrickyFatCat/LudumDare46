@@ -1,10 +1,10 @@
 class_name Player
 extends Entity
 
-const JUMP_VELOCITY : float = 2000.0
+const JUMP_VELOCITY : float = 800.0
 const HURT_VELOCITY : float = 500.0
 const GROUND_ACCELERATION : float = 5000.0
-const AIR_ACCELERATION : float = 4000.0
+const AIR_ACCELERATION : float = 5000.0
 
 
 func calculate_direction_x() -> void:
@@ -42,9 +42,8 @@ func calculate_friction() -> void:
 		friction = AIR_FRICTION
 
 
-
-
-
+func activate_jump() -> void:
+	velocity.y = -JUMP_VELOCITY
 
 
 
