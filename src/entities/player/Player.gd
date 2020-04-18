@@ -23,12 +23,12 @@ func _ready() -> void:
 # warning-ignore:unused_argument
 func _input(event):
 	if InputHandler.is_shoot_pressed() and is_holding_egg:
+		var target_point = global_position + Vector2(THROW_TARGET.x * facing_direction, THROW_TARGET.y)
 		set_is_holding_egg(false)
 		var egg_instance = egg_scene.instance()
-		egg_instance.global_position = EggSprite.global_position
-		var target_point = global_position + Vector2(THROW_TARGET.x * facing_direction, THROW_TARGET.y)
-		egg_instance.launch(target_point)
 		get_parent().add_child(egg_instance)
+		egg_instance.global_position = EggSprite.global_position
+		egg_instance.launch(target_point)
 
 
 func calculate_direction_x() -> void:

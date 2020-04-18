@@ -68,25 +68,24 @@ animations = [ {
 extents = Vector2( 7, 12 )
 
 [node name="Player" instance=ExtResource( 1 )]
-position = Vector2( 0, -0.0994415 )
 collision_mask = 14
 script = ExtResource( 2 )
 max_velocity = 200.0
 acceleration = 0.0
 
 [node name="AnimatedSprite" parent="." index="0"]
+position = Vector2( 0, -4 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 10
+frame = 5
 playing = true
 
 [node name="EggSprite" type="Sprite" parent="." index="1"]
 visible = false
-position = Vector2( 2, 4.09944 )
+position = Vector2( 3, 1 )
 texture = ExtResource( 35 )
 
 [node name="CollisionShape2D" parent="." index="2"]
-position = Vector2( 0, 4 )
 shape = SubResource( 2 )
 
 [node name="StateMachine" parent="." index="3"]

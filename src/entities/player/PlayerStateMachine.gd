@@ -36,8 +36,10 @@ func _physics_process(delta) -> void:
 	Parent.calculate_friction()
 	Parent.calculate_acceleration()
 	Parent.calculate_velocity_x(delta, Parent.direction)
+	
 	if CoyoteTimer.is_stopped():
 		Parent.apply_gravity(delta)
+	
 	Parent.move()
 	check_states()
 

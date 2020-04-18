@@ -21,7 +21,7 @@ tile_data = PoolIntArray( 0, 1, 65537, 1, 1, 65538, 18, 4, 0, 19, 4, 0, 65536, 1
 position = Vector2( 157, 138 )
 
 [node name="Player" parent="." index="5"]
-position = Vector2( 48, 128 )
+position = Vector2( 44, 132 )
 
 [node name="DeathTrigger" parent="." index="7"]
 position = Vector2( 157, 205 )

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/baseScripts/StateMachine.gd" type="Script" id=1]
 [ext_resource path="res://src/entities/Entity.gd" type="Script" id=2]
 [ext_resource path="res://src/baseScripts/AnimatedSpriteHandler.gd" type="Script" id=3]
+[ext_resource path="res://src/baseScripts/HitPoints.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 12 )
@@ -21,3 +22,6 @@ shape = SubResource( 1 )
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 1 )
+
+[node name="HitPoints" type="Node" parent="."]
+script = ExtResource( 4 )
