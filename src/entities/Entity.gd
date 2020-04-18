@@ -2,8 +2,8 @@ class_name Entity
 extends KinematicBody2D
 
 const GROUND_FRICTION : float = 2500.0
-const AIR_FRICTION : float = 100.0
-const BASE_GRAVITY : float = 4000.0
+const AIR_FRICTION : float = 50.0
+const BASE_GRAVITY : float = 3500.0
 
 export(float) var max_velocity = 500
 export(float) var acceleration = 1000

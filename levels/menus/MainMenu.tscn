@@ -44,6 +44,7 @@ position = Vector2( -136, 138.199 )
 
 [node name="ExitGame" parent="." index="5" instance=ExtResource( 3 )]
 position = Vector2( 48, 120 )
+is_require_egg = false
 
 [node name="ColorRect" type="ColorRect" parent="ExitGame" index="2"]
 margin_left = -24.0

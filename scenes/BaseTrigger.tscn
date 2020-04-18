@@ -3,7 +3,7 @@
 [ext_resource path="res://src/environment/BaseTrigger.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/CompassPro.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 24, 24 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -17,7 +17,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="Hint" type="Label" parent="."]
 visible = false

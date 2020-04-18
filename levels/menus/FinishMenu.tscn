@@ -43,6 +43,7 @@ position = Vector2( -136, 138 )
 
 [node name="ExitGame" parent="." index="5" instance=ExtResource( 3 )]
 position = Vector2( 48, 120 )
+is_require_egg = false
 
 [node name="ColorRect" type="ColorRect" parent="ExitGame" index="2"]
 margin_left = -24.0
@@ -56,6 +57,9 @@ __meta__ = {
 
 [node name="Player" parent="." index="6"]
 position = Vector2( 160, 128 )
+
+[node name="DeathTrigger" parent="." index="8"]
+position = Vector2( -136, 73 )
 [connection signal="on_trigger_atcivation" from="ExitGame" to="." method="_on_ExitGame_on_trigger_atcivation"]
 
 [editable path="LevelSwitcher"]

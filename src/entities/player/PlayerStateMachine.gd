@@ -1,6 +1,6 @@
 extends StateMachine
 
-const COYOTE_JUMP_TIME : float = 0.085
+const COYOTE_JUMP_TIME : float = 0.1
 
 var is_holding_egg : bool = false
 var was_on_floor : bool = false
@@ -96,6 +96,7 @@ func set_state_jump() -> void:
 
 func set_state_fall() -> void:
 	if Parent.velocity.y > 0:
+		Parent.gravity = Parent.BASE_GRAVITY
 		set_state(states.fall)
 		SpriteNode.play("fall")
 

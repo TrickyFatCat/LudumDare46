@@ -28,5 +28,6 @@ func _on_LevelSwitcher_on_trigger_atcivation():
 		activate_close_transition()
 
 
+# warning-ignore:unused_argument
 func _on_DeathTrigger_body_entered(body):
 	LevelManager.reload_current_level()

@@ -6,8 +6,11 @@ var previous_track_index : int = -1
 
 
 func _ready() -> void:
+# warning-ignore:return_value_discarded
 	connect("finished", self, "play_new_track")
+# warning-ignore:return_value_discarded
 	GameManager.connect("on_start_game", self, "_choose_new_track")
+# warning-ignore:return_value_discarded
 	GameManager.connect("on_end_game", self, "_stop_music")
 	_play_new_track()
 

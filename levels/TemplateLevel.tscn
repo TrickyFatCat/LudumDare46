@@ -55,6 +55,7 @@ format = 1
 
 [node name="DeathTrigger" type="Area2D" parent="."]
 collision_layer = 32
+collision_mask = 17
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -82,8 +83,8 @@ __meta__ = {
 }
 [connection signal="on_trigger_atcivation" from="LevelSwitcher" to="." method="_on_LevelSwitcher_on_trigger_atcivation"]
 [connection signal="on_screen_closed" from="CanvasLayer/TransitionScreen" to="." method="_on_TransitionScreen_on_screen_closed"]
-[connection signal="body_entered" from="DeathTrigger" to="." method="_on_DeathTrigger_body_entered"]
 [connection signal="body_entered" from="DeathTrigger" to="DeathTrigger" method="_on_BaseTrigger_body_entered"]
+[connection signal="body_entered" from="DeathTrigger" to="." method="_on_DeathTrigger_body_entered"]
 [connection signal="body_exited" from="DeathTrigger" to="DeathTrigger" method="_on_BaseTrigger_body_exited"]
 
 [editable path="LevelSwitcher"]

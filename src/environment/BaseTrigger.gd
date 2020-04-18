@@ -13,6 +13,7 @@ var is_player_inside : bool = false
 onready var Hint : Label = $Hint
 
 
+# warning-ignore:unused_argument
 func _process(delta):
 	if is_player_inside and InputHandler.is_interact_pressed():
 		emit_signal("on_trigger_atcivation")
@@ -25,6 +26,7 @@ func set_hint_text() -> void:
 		Hint.text = NORMAL_HINT
 
 
+# warning-ignore:unused_argument
 func _on_BaseTrigger_body_entered(body):
 	is_player_inside = true
 	
@@ -33,6 +35,7 @@ func _on_BaseTrigger_body_entered(body):
 		Hint.show()
 
 
+# warning-ignore:unused_argument
 func _on_BaseTrigger_body_exited(body):
 	is_player_inside = false
 	

@@ -1,7 +1,7 @@
 class_name Egg
 extends Entity
 
-const MIN_DISTANCE = 128
+const MIN_DISTANCE = 120
 
 
 func _physics_process(delta) -> void:
@@ -15,7 +15,7 @@ func _physics_process(delta) -> void:
 # warning-ignore:unused_argument
 func _on_impact(normal: Vector2, delta: float):
 	velocity = velocity.bounce(normal)
-	velocity *= 0.5 + rand_range(-0.05, 0.05)
+	velocity *= 0.4 + rand_range(-0.05, 0.05)
 
 
 func launch(target_position: Vector2) -> void:
