@@ -1,19 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://materials/TransitionShader.shader" type="Shader" id=1]
-[ext_resource path="res://assets/shader_mask_shards.png" type="Texture" id=2]
+[ext_resource path="res://materials/matTransitionEffect.tres" type="Material" id=1]
 [ext_resource path="res://src/interfaces/TransitionStates.gd" type="Script" id=3]
 [ext_resource path="res://src/interfaces/TransitionScreen.gd" type="Script" id=4]
 
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 1 )
-shader_param/cutoff = 1.0
-shader_param/smooth_size = 0.125
-shader_param/mask = ExtResource( 2 )
-
 [node name="TransitionEffect" type="ColorRect"]
-material = SubResource( 1 )
-use_parent_material = true
+material = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
@@ -21,7 +13,6 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-initial_state = 1
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 3 )

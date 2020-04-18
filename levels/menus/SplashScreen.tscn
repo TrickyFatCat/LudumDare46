@@ -33,7 +33,12 @@ __meta__ = {
 
 [node name="TransitionEffect" parent="." instance=ExtResource( 4 )]
 
-[node name="WaitTimer" type="Timer" parent="."]
+[node name="SplashWait" type="Timer" parent="."]
 one_shot = true
+
+[node name="TransitionWait" type="Timer" parent="."]
+one_shot = true
+[connection signal="on_screen_closed" from="TransitionEffect" to="." method="_on_TransitionEffect_on_screen_closed"]
 [connection signal="on_screen_opened" from="TransitionEffect" to="." method="_on_TransitionEffect_on_screen_opened"]
-[connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]
+[connection signal="timeout" from="SplashWait" to="." method="_on_SplashWait_timeout"]
+[connection signal="timeout" from="TransitionWait" to="." method="_on_TransitionWait_timeout"]

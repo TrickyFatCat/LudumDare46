@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://assets/shader_mask_shards.png" type="Texture" id=1]
+[ext_resource path="res://materials/TransitionShader.shader" type="Shader" id=2]
+
+[resource]
+shader = ExtResource( 2 )
+shader_param/cutoff = 0.0
+shader_param/smooth_size = 0.2
+shader_param/mask = ExtResource( 1 )

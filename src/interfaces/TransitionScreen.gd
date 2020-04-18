@@ -11,13 +11,12 @@ enum start_state{
 	OPENED
 }
 
-const TRANSITION_DURATION : float = 50.0
+const TRANSITION_DURATION : float = 0.75
 const MIN_CUTOFF : float = 0.0
 const MAX_CUTOFF : float = 1.0
 
 export(start_state) var initial_state = start_state.CLOSED
 
-var cutoff : float
 var transition_material : ShaderMaterial
 
 onready var StateMachineNode : StateMachine = $StateMachine
@@ -25,29 +24,23 @@ onready var TransitionTween : Tween = $TransitionTween
 
 
 func _ready() -> void:
-	transition_material = self.get_material()
+	transition_material = self.material
 	set_initial_state()
-
-
-func _process(delta) -> void:
-	set_cutoff()
 
 
 func set_initial_state() -> void:
 	match initial_state:
 		start_state.CLOSED:
 			StateMachineNode.set_state_closed()
-			cutoff = MIN_CUTOFF
-			set_cutoff()
+			set_cutoff(MIN_CUTOFF)
 		start_state.OPENED:
 			StateMachineNode.set_state_opened()
-			cutoff = MAX_CUTOFF
-			set_cutoff()
+			set_cutoff(MAX_CUTOFF)
 
 
-func set_cutoff() -> void:
-	clamp(cutoff, MIN_CUTOFF, MAX_CUTOFF)
-	transition_material.set_shader_param("cutoff", cutoff)
+func set_cutoff(value: float) -> void:
+	clamp(value, MIN_CUTOFF, MAX_CUTOFF)
+	transition_material.set_shader_param("cutoff", value)
 
 
 func start_opening_transition() -> void:
@@ -63,7 +56,7 @@ func start_closing_transition() -> void:
 
 
 func activate_tween(initial_value: float, target_value: float) -> void:
-	TransitionTween.interpolate_property(self, "cutoff", initial_value, target_value, TRANSITION_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	TransitionTween.interpolate_method(self, "set_cutoff", initial_value, target_value, TRANSITION_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	TransitionTween.start()
 
 
