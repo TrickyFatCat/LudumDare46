@@ -1,12 +1,22 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/environment/MainTileset.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/interface/TransitionScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/interfaces/TransitionHandler.gd" type="Script" id=3]
 
 [node name="LevelName" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TransitionHandler" type="Node" parent="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="TransitionScreen" parent="CanvasLayer/TransitionHandler" instance=ExtResource( 2 )]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
+collision_layer = 4
 format = 1
 
 [node name="Enemies" type="Node" parent="."]
