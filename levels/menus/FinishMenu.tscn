@@ -8,6 +8,9 @@
 script = ExtResource( 1 )
 next_level = "res://levels/Level1.tscn"
 
+[node name="Camera2D" parent="." index="0"]
+zoom = Vector2( 1, 1 )
+
 [node name="Label" type="Label" parent="CanvasLayer" index="0"]
 margin_left = 80.0
 margin_top = 32.0

@@ -79,7 +79,7 @@ func set_state_run() -> void:
 
 
 func set_state_jump() -> void:
-	if InputHandler.is_jump_pressed() and (Parent.is_on_floor() or is_coyote_time):
+	if InputHandler.is_jump_pressed() and (Parent.is_on_floor() or is_coyote_time) and !Parent.is_holding_egg:
 		stop_coyote_timer()
 		Parent.activate_jump()
 		set_state(states.jump)

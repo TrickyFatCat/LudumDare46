@@ -20,6 +20,7 @@ zoom = Vector2( 2, 2 )
 visible = false
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -1
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 4

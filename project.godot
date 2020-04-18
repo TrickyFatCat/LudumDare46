@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Entity",
+"class": "Egg",
+"language": "GDScript",
+"path": "res://src/entities/player/Egg.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Entity",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://src/baseScripts/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"Egg": "",
 "Entity": "",
 "Level": "",
 "Player": "",
