@@ -1,17 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/environment/MainTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/interface/TransitionScreen.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/interfaces/TransitionHandler.gd" type="Script" id=3]
+[ext_resource path="res://scenes/BaseTrigger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/levels/Level.gd" type="Script" id=5]
 
 [node name="LevelName" type="Node"]
+script = ExtResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TransitionHandler" type="Node" parent="CanvasLayer"]
-script = ExtResource( 3 )
-
-[node name="TransitionScreen" parent="CanvasLayer/TransitionHandler" instance=ExtResource( 2 )]
+[node name="TransitionScreen" parent="CanvasLayer" instance=ExtResource( 2 )]
+visible = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -19,4 +24,20 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 4
 format = 1
 
+[node name="Player" parent="." instance=ExtResource( 4 )]
+
 [node name="Enemies" type="Node" parent="."]
+
+[node name="LevelSwitcher" parent="." instance=ExtResource( 3 )]
+
+[node name="Label" type="Label" parent="LevelSwitcher"]
+margin_left = -33.0
+margin_top = -39.0
+margin_right = 35.0
+margin_bottom = -25.0
+text = "Next Level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="on_screen_closed" from="CanvasLayer/TransitionScreen" to="." method="_on_TransitionScreen_on_screen_closed"]
+[connection signal="body_entered" from="LevelSwitcher" to="." method="_on_LevelSwitcher_body_entered"]

@@ -1,5 +1,46 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://levels/TemplateLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/BaseTrigger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/levels/MainMenu.gd" type="Script" id=4]
 
 [node name="MainMenu" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+next_level = "res://levels/Level1.tscn"
+
+[node name="Label" type="Label" parent="CanvasLayer" index="0"]
+margin_left = 120.0
+margin_top = 32.0
+margin_right = 204.0
+margin_bottom = 46.0
+text = "strEGGding"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" parent="." index="2"]
+tile_data = PoolIntArray( 655359, 0, 0, 589824, 0, 1, 589825, 0, 1, 589826, 0, 1, 589827, 0, 1, 589828, 0, 1, 589829, 0, 1, 589830, 0, 1, 589831, 0, 1, 589832, 0, 1, 589833, 0, 1, 589834, 0, 1, 589835, 0, 1, 589836, 0, 1, 589837, 0, 1, 589838, 0, 1, 589839, 0, 1, 589840, 0, 1, 589841, 0, 1, 589842, 0, 1, 589843, 0, 1, 589844, 0, 2, 720895, 0, 65536, 655360, 0, 65537, 655361, 0, 65537, 655362, 0, 65537, 655363, 0, 65537, 655364, 0, 65537, 655365, 0, 65537, 655366, 0, 65537, 655367, 0, 65537, 655368, 0, 65537, 655369, 0, 65537, 655370, 0, 65537, 655371, 0, 65537, 655372, 0, 65537, 655373, 0, 65537, 655374, 0, 65537, 655375, 0, 65537, 655376, 0, 65537, 655377, 0, 65537, 655378, 0, 65537, 655379, 0, 65537, 655380, 0, 65538, 786431, 0, 131072, 720896, 0, 131073, 720897, 0, 131073, 720898, 0, 131073, 720899, 0, 131073, 720900, 0, 131073, 720901, 0, 131073, 720902, 0, 131073, 720903, 0, 131073, 720904, 0, 131073, 720905, 0, 131073, 720906, 0, 131073, 720907, 0, 131073, 720908, 0, 131073, 720909, 0, 131073, 720910, 0, 131073, 720911, 0, 131073, 720912, 0, 131073, 720913, 0, 131073, 720914, 0, 131073, 720915, 0, 131073, 720916, 0, 131074 )
+
+[node name="Player" parent="." index="3"]
+position = Vector2( 160, 128 )
+
+[node name="ExitGame" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 48, 120 )
+
+[node name="Label" type="Label" parent="ExitGame" index="1"]
+margin_left = -32.0
+margin_top = -40.0
+margin_right = 33.0
+margin_bottom = -26.0
+text = "Exit Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSwitcher" parent="." index="6"]
+position = Vector2( 272, 120 )
+[connection signal="body_entered" from="ExitGame" to="." method="_on_ExitGame_body_entered"]
+
+[editable path="ExitGame"]

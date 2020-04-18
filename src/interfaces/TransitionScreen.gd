@@ -24,6 +24,7 @@ onready var TransitionTween : Tween = $TransitionTween
 
 
 func _ready() -> void:
+	self.show()
 	transition_material = self.material
 	set_initial_state()
 
@@ -39,7 +40,7 @@ func set_initial_state() -> void:
 
 
 func set_cutoff(value: float) -> void:
-	clamp(value, MIN_CUTOFF, MAX_CUTOFF)
+	value = clamp(value, MIN_CUTOFF, MAX_CUTOFF)
 	transition_material.set_shader_param("cutoff", value)
 
 
@@ -56,7 +57,9 @@ func start_closing_transition() -> void:
 
 
 func activate_tween(initial_value: float, target_value: float) -> void:
+# warning-ignore:return_value_discarded
 	TransitionTween.interpolate_method(self, "set_cutoff", initial_value, target_value, TRANSITION_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
+# warning-ignore:return_value_discarded
 	TransitionTween.start()
 
 
