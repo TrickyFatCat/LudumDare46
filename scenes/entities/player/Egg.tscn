@@ -23,7 +23,7 @@ radius = 32.0
 collision_layer = 16
 collision_mask = 14
 script = ExtResource( 4 )
-max_velocity = 750.0
+max_velocity = 800.0
 
 [node name="AnimatedSprite" parent="." index="0"]
 position = Vector2( -0.0994415, -1.90056 )

@@ -5,8 +5,10 @@ const JUMP_VELOCITY : float = 800.0
 const HURT_VELOCITY : float = 500.0
 const GROUND_ACCELERATION : float = 5000.0
 const AIR_ACCELERATION : float = 5000.0
+const THROW_TARGET : Vector2 = Vector2(512, 128)
 
 var is_holding_egg : bool = false
+var facing_direction : int = 1
 
 onready var EggSprite : Sprite = $EggSprite
 onready var egg_scene : PackedScene = preload("res://scenes/entities/player/Egg.tscn")
@@ -22,7 +24,8 @@ func _input(event):
 		set_is_holding_egg(false)
 		var egg_instance = egg_scene.instance()
 		egg_instance.global_position = EggSprite.global_position
-		egg_instance.launch(get_global_mouse_position())
+		var target_point = global_position + Vector2(THROW_TARGET.x * facing_direction, THROW_TARGET.y)
+		egg_instance.launch(target_point)
 		get_parent().add_child(egg_instance)
 
 

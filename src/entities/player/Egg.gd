@@ -1,7 +1,7 @@
 class_name Egg
 extends Entity
 
-const MIN_DISTANCE = 96
+const MIN_DISTANCE = 128
 
 var is_player_near : bool = false
 
@@ -22,9 +22,9 @@ func _on_impact(normal: Vector2, delta: float):
 
 
 func launch(target_position: Vector2) -> void:
-	var arc_height = target_position.y - position.y - MIN_DISTANCE
+	var arc_height = target_position.y - global_position.y - MIN_DISTANCE
 	arc_height = min(arc_height, -MIN_DISTANCE)
-	velocity = PhysicsHelper.calculate_arc_velocity(position, target_position, arc_height, gravity)
+	velocity = PhysicsHelper.calculate_arc_velocity(global_position, target_position, arc_height, gravity)
 	velocity = velocity.clamped(max_velocity)
 
 

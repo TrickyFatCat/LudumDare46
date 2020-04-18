@@ -27,6 +27,11 @@ func _physics_process(delta) -> void:
 	if state == states.idle or state == states.run or state == states.fall or state == states.dash:
 		Parent.calculate_direction_x()
 		SpriteNode.flip_sprite(Parent.direction)
+		
+		if SpriteNode.flip_h:
+			Parent.facing_direction = -1
+		else:
+			Parent.facing_direction = 1
 	
 	Parent.calculate_friction()
 	Parent.calculate_acceleration()
