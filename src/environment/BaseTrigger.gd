@@ -6,6 +6,7 @@ const NORMAL_HINT : String = "Press F"
 const ERROR_HINT : String = "Bring the egg"
 
 export(bool) var is_require_egg = true
+export(bool) var is_require_interaction = true
 
 var is_player_inside : bool = false
 
@@ -26,11 +27,15 @@ func set_hint_text() -> void:
 
 func _on_BaseTrigger_body_entered(body):
 	is_player_inside = true
-	set_hint_text()
-	Hint.show()
+	
+	if is_require_interaction:
+		set_hint_text()
+		Hint.show()
 
 
 func _on_BaseTrigger_body_exited(body):
 	is_player_inside = false
-	set_hint_text()
-	Hint.hide()
+	
+	if is_require_interaction:
+		set_hint_text()
+		Hint.hide()

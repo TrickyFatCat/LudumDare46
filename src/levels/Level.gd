@@ -26,3 +26,7 @@ func _on_TransitionScreen_on_screen_closed():
 func _on_LevelSwitcher_on_trigger_atcivation():
 	if Global.player.is_holding_egg or !LevelSwitcher.is_require_egg:
 		activate_close_transition()
+
+
+func _on_DeathTrigger_body_entered(body):
+	LevelManager.reload_current_level()
