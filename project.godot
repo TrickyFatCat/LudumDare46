@@ -59,6 +59,7 @@ InputHandler="*res://src/singletons/InputHandler.gd"
 LevelManager="*res://src/singletons/LevelManager.gd"
 Utility="*res://src/singletons/Utility.gd"
 PhysicsHelper="*res://src/singletons/PhysicsHelper.gd"
+MusicPlayer="*res://src/singletons/MusicPlayer.gd"
 
 [display]
 

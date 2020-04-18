@@ -6,6 +6,7 @@ signal on_load_next_level()
 export(String, FILE, "*.tscn") var next_level
 
 onready var TransitionScreen : ColorRect = $CanvasLayer/TransitionScreen
+onready var LevelSwitcher : Area2D = $LevelSwitcher
 
 
 func _ready() -> void:
@@ -22,7 +23,6 @@ func _on_TransitionScreen_on_screen_closed():
 	LevelManager.load_level_by_path(next_level)
 
 
-# warning-ignore:unused_argument
-func _on_LevelSwitcher_body_entered(body):
-	if body.is_holding_egg:
+func _on_LevelSwitcher_on_trigger_atcivation():
+	if Global.player.is_holding_egg or !LevelSwitcher.is_require_egg:
 		activate_close_transition()

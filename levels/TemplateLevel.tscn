@@ -15,6 +15,18 @@ anchor_mode = 0
 current = true
 zoom = Vector2( 2, 2 )
 
+[node name="LevelSwitcher" parent="." instance=ExtResource( 3 )]
+
+[node name="ColorRect" type="ColorRect" parent="LevelSwitcher"]
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 24.0
+margin_bottom = 24.0
+color = Color( 0, 0.494118, 0.0901961, 0.54902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TransitionScreen" parent="CanvasLayer" instance=ExtResource( 2 )]
@@ -32,17 +44,7 @@ format = 1
 [node name="Player" parent="." instance=ExtResource( 4 )]
 
 [node name="Enemies" type="Node" parent="."]
-
-[node name="LevelSwitcher" parent="." instance=ExtResource( 3 )]
-
-[node name="Label" type="Label" parent="LevelSwitcher"]
-margin_left = -33.0
-margin_top = -39.0
-margin_right = 35.0
-margin_bottom = -25.0
-text = "Next Level"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[connection signal="on_trigger_atcivation" from="LevelSwitcher" to="." method="_on_LevelSwitcher_on_trigger_atcivation"]
 [connection signal="on_screen_closed" from="CanvasLayer/TransitionScreen" to="." method="_on_TransitionScreen_on_screen_closed"]
-[connection signal="body_entered" from="LevelSwitcher" to="." method="_on_LevelSwitcher_body_entered"]
+
+[editable path="LevelSwitcher"]

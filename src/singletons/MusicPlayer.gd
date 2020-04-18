@@ -1,9 +1,6 @@
 extends AudioStreamPlayer
 
-var tracks = [
-	"res://assets/sounds/bgm_adventures.ogg",
-	"res://assets/sounds/bgm_summerPark.ogg"
-	]
+var tracks = ["res://sounds/music/music.ogg"]
 var track_index : int = -1
 var previous_track_index : int = -1
 
@@ -16,8 +13,8 @@ func _ready() -> void:
 
 
 func _play_new_track() -> void:
-	if GameManager.state != GameManager.states.menu:
-		choose_new_track()
+#	if GameManager.state != GameManager.states.menu:
+		_choose_new_track()
 
 
 func _choose_new_track() -> void:

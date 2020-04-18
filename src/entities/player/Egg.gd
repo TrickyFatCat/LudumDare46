@@ -3,10 +3,6 @@ extends Entity
 
 const MIN_DISTANCE = 128
 
-var is_player_near : bool = false
-
-onready var HintLabel : Label = $Hint
-
 
 func _physics_process(delta) -> void:
 	apply_gravity(delta)
@@ -16,6 +12,7 @@ func _physics_process(delta) -> void:
 		_on_impact(collision.normal, delta)
 
 
+# warning-ignore:unused_argument
 func _on_impact(normal: Vector2, delta: float):
 	velocity = velocity.bounce(normal)
 	velocity *= 0.5 + rand_range(-0.05, 0.05)
@@ -28,20 +25,6 @@ func launch(target_position: Vector2) -> void:
 	velocity = velocity.clamped(max_velocity)
 
 
-# warning-ignore:unused_argument
-func _input(event):
-	if InputHandler.is_interact_pressed() and is_player_near:
-		Global.player.set_is_holding_egg(true)
-		self.queue_free()
-
-
-# warning-ignore:unused_argument
-func _on_Area2D_body_entered(body):
-	HintLabel.show()
-	is_player_near = true
-
-
-# warning-ignore:unused_argument
-func _on_Area2D_body_exited(body):
-	HintLabel.hide()
-	is_player_near = false
+func _on_BaseTrigger_on_trigger_atcivation():
+	Global.player.set_is_holding_egg(true)
+	self.queue_free()
