@@ -20,7 +20,6 @@ func _on_TransitionScreen_on_screen_closed():
 	emit_signal("on_load_next_level")
 	yield(get_tree().create_timer(1.5), "timeout")
 	LevelManager.load_level_by_path(next_level)
-	Global.player == null
 
 
 # warning-ignore:unused_argument

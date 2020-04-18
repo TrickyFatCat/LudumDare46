@@ -16,11 +16,13 @@ func _ready() -> void:
 	Global.player = self
 
 
+# warning-ignore:unused_argument
 func _input(event):
 	if InputHandler.is_shoot_pressed() and is_holding_egg:
 		set_is_holding_egg(false)
 		var egg_instance = egg_scene.instance()
 		egg_instance.global_position = EggSprite.global_position
+		egg_instance.launch(get_global_mouse_position())
 		get_parent().add_child(egg_instance)
 
 

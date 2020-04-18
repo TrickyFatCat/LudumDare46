@@ -74,7 +74,7 @@ acceleration = 0.0
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 3
+frame = 9
 playing = true
 
 [node name="EggSprite" type="Sprite" parent="." index="1"]
@@ -90,4 +90,3 @@ script = ExtResource( 3 )
 
 [node name="CoyoteTimer" type="Timer" parent="StateMachine" index="0"]
 one_shot = true
-[connection signal="timeout" from="StateMachine/CoyoteTimer" to="StateMachine" method="_on_CoyoteTimer_timeout"]
