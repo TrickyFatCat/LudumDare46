@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/environment/MainTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/interface/TransitionScreen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/BaseTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/entities/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=5]
+[ext_resource path="res://scenes/entities/player/Egg.tscn" type="PackedScene" id=6]
 
 [node name="LevelName" type="Node"]
 script = ExtResource( 5 )
@@ -25,6 +26,8 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 4
 format = 1
+
+[node name="Egg" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 
