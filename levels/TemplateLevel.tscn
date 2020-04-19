@@ -13,14 +13,19 @@
 [node name="LevelName" type="Node"]
 script = ExtResource( 5 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
 material = ExtResource( 8 )
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 640.0
+margin_bottom = 360.0
 texture = ExtResource( 7 )
 stretch_mode = 2
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
 [node name="LevelSwitcher" parent="." instance=ExtResource( 3 )]
@@ -62,11 +67,6 @@ margin_bottom = 5.0
 
 [node name="TransitionScreen" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-current = true
-zoom = Vector2( 2, 2 )
 [connection signal="on_trigger_atcivation" from="LevelSwitcher" to="." method="_on_LevelSwitcher_on_trigger_atcivation"]
 [connection signal="on_screen_closed" from="CanvasLayer/TransitionScreen" to="." method="_on_TransitionScreen_on_screen_closed"]
 
