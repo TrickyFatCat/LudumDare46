@@ -40,6 +40,7 @@ func set_global_position(new_position: Vector2) -> void:
 
 
 func on_damage_taken() -> void:
+	activate_godmode()
 	var target_point = global_position + Vector2(DAMAGE_THROW_DISTANCE * -sign(velocity.x), global_position.y)
 	launch(target_point, DAMAGE_THROW_VELOCITY)
 

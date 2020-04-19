@@ -77,6 +77,7 @@ func set_is_holding_egg(value: bool) -> void:
 
 
 func activate_stunlock_jump() -> void:
+	activate_godmode()
 	velocity.y = -STUNLOCK_JUMP_VELOCITY
 	var direction_x = -sign(velocity.x)
 	
