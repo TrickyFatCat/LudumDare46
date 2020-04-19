@@ -22,3 +22,8 @@ func reload_current_level() -> void:
 # warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
 	HitPoints.sync_hitpoitnts()
+
+
+func load_finish_menu() -> void:
+	load_level_by_path("res://levels/menus/FinishMenu.tscn")
+	HitPoints.sync_hitpoitnts()

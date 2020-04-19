@@ -22,6 +22,7 @@ func sync_hitpoitnts() -> void:
 
 func decrease_pleayer_hitpoints() -> void:
 	player_hitpoints -= 1
+	player_hitpoints = max(player_hitpoints, 0)
 	emit_signal("on_player_take_damage")
 	
 	if player_hitpoints <= 0:
@@ -30,6 +31,7 @@ func decrease_pleayer_hitpoints() -> void:
 
 func decrease_egg_hitpoints() -> void:
 	egg_hitpoints -= 1
+	egg_hitpoints = max(egg_hitpoints, 0)
 	emit_signal("on_egg_take_damage")
 	
 	if egg_hitpoints <= 0:

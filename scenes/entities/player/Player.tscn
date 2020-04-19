@@ -43,9 +43,9 @@ animations = [ {
 "name": "idle",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "fall",
+"name": "jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 15 ) ],
@@ -53,20 +53,20 @@ animations = [ {
 "name": "run",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "jump",
+"name": "stunlock",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "fall",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 29 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ) ],
 "loop": true,
 "name": "dash",
 "speed": 24.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "stunlock",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -81,7 +81,8 @@ acceleration = 0.0
 [node name="AnimatedSprite" parent="." index="0"]
 position = Vector2( 0, -4 )
 frames = SubResource( 1 )
-animation = "stunlock"
+animation = "idle"
+frame = 5
 playing = true
 
 [node name="EggSprite" type="Sprite" parent="." index="1"]

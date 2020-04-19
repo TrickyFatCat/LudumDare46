@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/environment/MainTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/interface/TransitionScreen.tscn" type="PackedScene" id=2]
@@ -6,15 +6,7 @@
 [ext_resource path="res://scenes/entities/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=5]
 [ext_resource path="res://scenes/entities/player/Egg.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/fonts/CompassPro.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://src/environment/BaseTrigger.gd" type="Script" id=8]
 [ext_resource path="res://scenes/interface/HUD.tscn" type="PackedScene" id=9]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24, 24 )
-
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 7 )
 
 [node name="LevelName" type="Node"]
 script = ExtResource( 5 )
@@ -51,35 +43,6 @@ format = 1
 
 [node name="Traps" type="Node" parent="."]
 
-[node name="DeathTrigger" type="Area2D" parent="."]
-collision_layer = 32
-collision_mask = 17
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-is_require_egg = false
-is_require_interaction = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathTrigger"]
-shape = SubResource( 1 )
-
-[node name="Hint" type="Label" parent="DeathTrigger"]
-visible = false
-margin_left = -29.0978
-margin_top = -38.9841
-margin_right = 29.9022
-margin_bottom = -23.9841
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Press F"
-align = 1
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 9 )]
@@ -90,9 +53,6 @@ margin_bottom = 5.0
 [node name="TransitionScreen" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
 [connection signal="on_trigger_atcivation" from="LevelSwitcher" to="." method="_on_LevelSwitcher_on_trigger_atcivation"]
-[connection signal="body_entered" from="DeathTrigger" to="DeathTrigger" method="_on_BaseTrigger_body_entered"]
-[connection signal="body_entered" from="DeathTrigger" to="." method="_on_DeathTrigger_body_entered"]
-[connection signal="body_exited" from="DeathTrigger" to="DeathTrigger" method="_on_BaseTrigger_body_exited"]
 [connection signal="on_screen_closed" from="CanvasLayer/TransitionScreen" to="." method="_on_TransitionScreen_on_screen_closed"]
 
 [editable path="LevelSwitcher"]

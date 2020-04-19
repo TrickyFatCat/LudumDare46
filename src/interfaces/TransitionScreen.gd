@@ -63,6 +63,10 @@ func activate_tween(initial_value: float, target_value: float) -> void:
 	TransitionTween.start()
 
 
+func is_transition_active() -> bool:
+	return TransitionTween.is_active()
+
+
 func _on_TransitionTween_tween_all_completed():
 	if StateMachineNode.is_previous_state_opening():
 			StateMachineNode.set_state_opened()
