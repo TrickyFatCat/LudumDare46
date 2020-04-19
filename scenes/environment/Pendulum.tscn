@@ -6,15 +6,14 @@
 
 [node name="Pendulum" type="Node2D"]
 script = ExtResource( 3 )
-max_angle = 180.0
 
 [node name="platform_long" type="Sprite" parent="."]
-position = Vector2( 0, 32 )
+position = Vector2( 0, 28 )
 rotation = 1.5708
 texture = ExtResource( 2 )
 
 [node name="SpikedBall" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 64 )
+position = Vector2( 0, 56 )
 
 [node name="Tween" type="Tween" parent="."]
 [connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

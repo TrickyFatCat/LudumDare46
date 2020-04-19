@@ -1,9 +1,11 @@
 tool
 extends KinematicBody2D
 
+export(bool) var is_moving = true
 export(float) var travel_time = 1.0
 export(float) var wait_time = 1.0
 export(bool) var is_cycled = true
+
 var next_point_index : int = 0
 var target_point : Node2D
 
@@ -13,7 +15,9 @@ onready var target_points = $TargetPoints.get_children()
 
 func _ready():
 	WaitTimer.wait_time = wait_time
-	activate_saw_movement()
+	
+	if is_moving:
+		activate_saw_movement()
 
 
 func start_tween(target_position: Vector2) -> void:

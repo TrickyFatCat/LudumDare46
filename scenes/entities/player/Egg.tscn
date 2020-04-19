@@ -23,7 +23,7 @@ radius = 17.0294
 [node name="Egg" instance=ExtResource( 1 )]
 z_index = 1
 collision_layer = 16
-collision_mask = 14
+collision_mask = 6
 script = ExtResource( 4 )
 max_velocity = 750.0
 

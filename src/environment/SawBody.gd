@@ -1,9 +1,12 @@
 tool
 extends Area2D
 
+export(bool) var is_moving = true
 export(float) var travel_time = 1.0
 export(float) var wait_time = 1.0
 export(bool) var is_cycled = true
+export(bool) var one_way = false
+
 var next_point_index : int = 0
 var target_point : Node2D
 
@@ -13,7 +16,8 @@ onready var target_points = $TargetPoints.get_children()
 
 func _ready():
 	WaitTimer.wait_time = wait_time
-	activate_saw_movement()
+	if is_moving:
+		activate_saw_movement()
 
 
 func start_tween(target_position: Vector2) -> void:
@@ -23,12 +27,15 @@ func start_tween(target_position: Vector2) -> void:
 
 func activate_saw_movement() -> void:
 	set_target_point()
-	start_tween(target_point.global_position)
-	next_point_index += 1
+	
+	if next_point_index != target_points.size():
+		start_tween(target_point.global_position)
+		next_point_index += 1
+	
 
 
 func set_target_point()-> void:
-	if next_point_index == target_points.size():
+	if next_point_index == target_points.size() and !one_way:
 		if !is_cycled:
 			target_points.invert()
 			next_point_index = 1

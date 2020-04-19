@@ -10,6 +10,7 @@ func _ready() -> void:
 	HitPoints.connect("on_player_take_damage", self, "update_player_hitpoints")
 # warning-ignore:return_value_discarded
 	HitPoints.connect("on_egg_take_damage", self, "update_egg_hitpoints")
+# warning-ignore:return_value_discarded
 	PointsHandler.connect("on_points_changed", self, "update_fruit_counter")
 	update_player_hitpoints()
 	update_egg_hitpoints()

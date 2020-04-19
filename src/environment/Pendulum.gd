@@ -22,6 +22,6 @@ func start_fluctuation(initial_rotation: float, target_rotation: float) -> void:
 func _on_Tween_tween_all_completed():
 	if rotation_degrees == min_angle:
 		start_fluctuation(min_angle, max_angle)
-	else:
+	elif rotation_degrees == max_angle:
 		start_fluctuation(max_angle, min_angle)
 	
