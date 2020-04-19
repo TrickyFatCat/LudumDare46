@@ -10,13 +10,15 @@ onready var SpriteNode : AnimatedSprite = Parent.get_node("AnimatedSprite")
 onready var CoyoteTimer : Timer = $CoyoteTimer
 
 func _ready():
+# warning-ignore:return_value_discarded
+	HitPoints.connect("on_player_take_damage", self, "set_state_stunlock")
 	CoyoteTimer.wait_time = COYOTE_JUMP_TIME
 	add_state("idle")
 	add_state("run")
 	add_state("jump")
 	add_state("fall")
 	add_state("dash")
-	add_state("damaged")
+	add_state("stunlock")
 	add_state("death")
 	set_state_idle()
 
@@ -69,7 +71,8 @@ func check_states() -> void:
 					set_state_run()
 		states.dash:
 			pass
-		states.damaged:
+		states.stunlock:
+			set_state_fall()
 			pass
 		states.death:
 			pass
@@ -102,7 +105,9 @@ func set_state_fall() -> void:
 		SpriteNode.play("fall")
 
 
-
+func set_state_stunlock() -> void:
+	set_state(states.stunlock)
+	Parent.activate_stunlock_jump()
 
 
 

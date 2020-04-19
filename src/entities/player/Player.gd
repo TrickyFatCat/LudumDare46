@@ -4,10 +4,13 @@ extends Entity
 const JUMP_VELOCITY : float = 500.0
 const JUMP_GRAVITY : float = 1750.0
 const JMUP_BONUS_VELOCITY : float = 100.0
-const HURT_VELOCITY : float = 500.0
+const STUNLOCK_VELOCITY : float = 300.0
+const STUNLOCK_JUMP_VELOCITY : float = 700.0
 const GROUND_ACCELERATION : float = 5000.0
 const AIR_ACCELERATION : float = 5000.0
 const THROW_TARGET : Vector2 = Vector2(512, 256)
+const THROW_VELOCITY : float = 750.0
+const STUNLOCK_THROW_VELOCITY : float = 500.0
 
 var is_holding_egg : bool = false
 var facing_direction : int = 1
@@ -23,12 +26,7 @@ func _ready() -> void:
 # warning-ignore:unused_argument
 func _input(event):
 	if InputHandler.is_shoot_pressed() and is_holding_egg:
-		var target_point = global_position + Vector2(THROW_TARGET.x * facing_direction, THROW_TARGET.y)
-		set_is_holding_egg(false)
-		var egg_instance = egg_scene.instance()
-		get_parent().add_child(egg_instance)
-		egg_instance.global_position = EggSprite.global_position
-		egg_instance.launch(target_point)
+		throw_egg(THROW_VELOCITY)
 
 
 func calculate_direction_x() -> void:
@@ -78,10 +76,27 @@ func set_is_holding_egg(value: bool) -> void:
 		EggSprite.hide()
 
 
+func activate_stunlock_jump() -> void:
+	velocity.y = -STUNLOCK_JUMP_VELOCITY
+	var direction_x = -sign(velocity.x)
+	
+	if direction_x == 0:
+		direction_x = Utility.choosei([-1, 1])
+	
+	velocity.x = direction_x * STUNLOCK_VELOCITY
+	
+	if is_holding_egg:
+		throw_egg(STUNLOCK_THROW_VELOCITY)
 
 
-
-
+func throw_egg(velocity: float) -> void:
+	var target_point = global_position + Vector2(THROW_TARGET.x * facing_direction, THROW_TARGET.y)
+	set_is_holding_egg(false)
+	var egg_instance = egg_scene.instance()
+	get_parent().call_deferred("add_child", egg_instance)
+	yield(get_tree(), "idle_frame")
+	egg_instance.position = EggSprite.global_position
+	egg_instance.launch(target_point, velocity)
 
 
 

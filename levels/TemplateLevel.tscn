@@ -36,16 +36,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="CanvasLayer" instance=ExtResource( 9 )]
-anchor_bottom = 0.0
-margin_top = 5.0
-margin_bottom = 5.0
-
-[node name="TransitionScreen" parent="CanvasLayer" instance=ExtResource( 2 )]
-visible = false
-
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
 tile_set = ExtResource( 1 )
@@ -58,6 +48,8 @@ format = 1
 [node name="Player" parent="." instance=ExtResource( 4 )]
 
 [node name="Enemies" type="Node" parent="."]
+
+[node name="Traps" type="Node" parent="."]
 
 [node name="DeathTrigger" type="Area2D" parent="."]
 collision_layer = 32
@@ -87,10 +79,20 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 9 )]
+anchor_bottom = 0.0
+margin_top = 5.0
+margin_bottom = 5.0
+
+[node name="TransitionScreen" parent="CanvasLayer" instance=ExtResource( 2 )]
+visible = false
 [connection signal="on_trigger_atcivation" from="LevelSwitcher" to="." method="_on_LevelSwitcher_on_trigger_atcivation"]
-[connection signal="on_screen_closed" from="CanvasLayer/TransitionScreen" to="." method="_on_TransitionScreen_on_screen_closed"]
 [connection signal="body_entered" from="DeathTrigger" to="DeathTrigger" method="_on_BaseTrigger_body_entered"]
 [connection signal="body_entered" from="DeathTrigger" to="." method="_on_DeathTrigger_body_entered"]
 [connection signal="body_exited" from="DeathTrigger" to="DeathTrigger" method="_on_BaseTrigger_body_exited"]
+[connection signal="on_screen_closed" from="CanvasLayer/TransitionScreen" to="." method="_on_TransitionScreen_on_screen_closed"]
 
 [editable path="LevelSwitcher"]

@@ -30,3 +30,7 @@ static func play_sound(audio_stream: AudioStreamPlayer, sound: AudioStream = nul
 	
 	if !audio_stream.playing:
 		audio_stream.play()
+
+
+static func choosei(numbers: PoolIntArray) -> int:
+	return numbers[randi() % numbers.size()]
