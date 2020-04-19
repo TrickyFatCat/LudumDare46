@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="BaseMovingPlatrofm" type="KinematicBody2D"]
-position = Vector2( -40, 0 )
+position = Vector2( 40, 0 )
 collision_layer = 4
 collision_mask = 17
 motion/sync_to_physics = true

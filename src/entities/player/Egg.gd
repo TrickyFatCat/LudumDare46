@@ -16,6 +16,7 @@ func _ready() -> void:
 func _physics_process(delta) -> void:
 	apply_gravity(delta)
 	var collision = move_and_collide(velocity * delta)
+
 	
 	if collision != null:
 		_on_impact(collision.normal, delta)
@@ -41,7 +42,12 @@ func set_global_position(new_position: Vector2) -> void:
 
 func on_damage_taken() -> void:
 	activate_godmode()
-	var target_point = global_position + Vector2(DAMAGE_THROW_DISTANCE * -sign(velocity.x), global_position.y)
+	var direction_x = -sign(velocity.x)
+	
+	if direction_x == 0:
+		direction_x = Utility.choosei([-1, 1])
+	
+	var target_point = global_position + Vector2(DAMAGE_THROW_DISTANCE * direction_x, global_position.y)
 	launch(target_point, DAMAGE_THROW_VELOCITY)
 
 

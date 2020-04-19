@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/environment/MainTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/interface/TransitionScreen.tscn" type="PackedScene" id=2]
@@ -9,6 +9,34 @@
 [ext_resource path="res://assets/backgrounds/Pink.png" type="Texture" id=7]
 [ext_resource path="res://materials/matBackground.tres" type="Material" id=8]
 [ext_resource path="res://scenes/interface/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/environment/start/start_02.png" type="Texture" id=10]
+[ext_resource path="res://assets/environment/start/start_07.png" type="Texture" id=11]
+[ext_resource path="res://assets/environment/start/start_11.png" type="Texture" id=12]
+[ext_resource path="res://assets/environment/start/start_10.png" type="Texture" id=13]
+[ext_resource path="res://assets/environment/start/start_14.png" type="Texture" id=14]
+[ext_resource path="res://assets/environment/start/start_05.png" type="Texture" id=15]
+[ext_resource path="res://assets/environment/start/start_13.png" type="Texture" id=16]
+[ext_resource path="res://assets/environment/start/start_04.png" type="Texture" id=17]
+[ext_resource path="res://assets/environment/start/start_16.png" type="Texture" id=18]
+[ext_resource path="res://assets/environment/start/start_09.png" type="Texture" id=19]
+[ext_resource path="res://assets/environment/start/start_12.png" type="Texture" id=20]
+[ext_resource path="res://assets/environment/start/start_08.png" type="Texture" id=21]
+[ext_resource path="res://assets/environment/start/start_15.png" type="Texture" id=22]
+[ext_resource path="res://assets/environment/start/start_01.png" type="Texture" id=23]
+[ext_resource path="res://assets/environment/start/start_03.png" type="Texture" id=24]
+[ext_resource path="res://assets/environment/start/start_06.png" type="Texture" id=25]
+[ext_resource path="res://assets/environment/start/start_00.png" type="Texture" id=26]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25, 24 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 10 ), ExtResource( 24 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 25 ), ExtResource( 11 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 25.0
+} ]
 
 [node name="LevelName" type="Node"]
 script = ExtResource( 5 )
@@ -18,24 +46,15 @@ anchor_mode = 0
 current = true
 zoom = Vector2( 2, 2 )
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
+follow_viewport_enable = true
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground"]
 material = ExtResource( 8 )
 margin_right = 640.0
 margin_bottom = 360.0
 texture = ExtResource( 7 )
 stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LevelSwitcher" parent="." instance=ExtResource( 3 )]
-
-[node name="ColorRect" type="ColorRect" parent="LevelSwitcher"]
-margin_left = -24.0
-margin_top = -24.0
-margin_right = 24.0
-margin_bottom = 24.0
-color = Color( 0, 0.494118, 0.0901961, 0.54902 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -46,9 +65,32 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 4
 format = 1
 
+[node name="LevelSwitcher" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="LevelSwitcher" index="0"]
+position = Vector2( 1, 0 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="LevelSwitcher"]
+visible = false
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 24.0
+margin_bottom = 24.0
+color = Color( 0, 0.494118, 0.0901961, 0.54902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="LevelSwitcher"]
+frames = SubResource( 2 )
+playing = true
+offset = Vector2( -2, -8 )
+
 [node name="Egg" parent="." instance=ExtResource( 6 )]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1, 0 )
 
 [node name="Enemies" type="Node" parent="."]
 
