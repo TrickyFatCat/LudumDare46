@@ -73,6 +73,7 @@ animations = [ {
 extents = Vector2( 7, 12 )
 
 [node name="Player" instance=ExtResource( 1 )]
+z_index = 1
 collision_mask = 14
 script = ExtResource( 2 )
 max_velocity = 200.0
@@ -82,7 +83,7 @@ acceleration = 0.0
 position = Vector2( 0, -4 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 5
+frame = 9
 playing = true
 
 [node name="EggSprite" type="Sprite" parent="." index="1"]

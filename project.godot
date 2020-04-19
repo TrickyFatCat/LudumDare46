@@ -61,6 +61,7 @@ LevelManager="*res://src/singletons/LevelManager.gd"
 Utility="*res://src/singletons/Utility.gd"
 MusicPlayer="*res://src/singletons/MusicPlayer.gd"
 HitPoints="*res://src/singletons/HitPoints.gd"
+PointsHandler="*res://src/singletons/PointsHandler.gd"
 
 [display]
 

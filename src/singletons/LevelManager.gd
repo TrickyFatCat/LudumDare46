@@ -27,3 +27,4 @@ func reload_current_level() -> void:
 func load_finish_menu() -> void:
 	load_level_by_path("res://levels/menus/FinishMenu.tscn")
 	HitPoints.sync_hitpoitnts()
+	

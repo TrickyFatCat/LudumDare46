@@ -42,6 +42,8 @@ format = 1
 
 [node name="Traps" type="Node" parent="."]
 
+[node name="Fruits" type="Node" parent="."]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 9 )]

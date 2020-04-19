@@ -1,3 +1,4 @@
+tool
 extends Area2D
 
 export(float) var travel_time = 1.0
