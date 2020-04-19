@@ -32,16 +32,13 @@ position = Vector2( 64, 256 )
 
 [node name="Pendulum" parent="Traps" index="2" instance=ExtResource( 11 )]
 position = Vector2( 96, 144 )
-rotation = 0.695712
+rotation = 0.122458
 
 [node name="Saw" parent="Traps" index="3" instance=ExtResource( 3 )]
-position = Vector2( 325.963, 44.3727 )
+position = Vector2( 320.043, 44.0027 )
 
 [node name="AnimatedSprite" parent="Traps/Saw" index="0"]
-frame = 3
-
-[node name="Tween" parent="Traps/Saw" index="3"]
-playback/active = true
+frame = 7
 
 [node name="TargetPoint" parent="Traps/Saw/TargetPoints" index="0"]
 position = Vector2( 384, 48 )
@@ -53,7 +50,7 @@ position = Vector2( 320, 44 )
 position = Vector2( 144, 304 )
 
 [node name="LongPlatform" parent="MovingPlatforms" index="0" instance=ExtResource( 5 )]
-position = Vector2( 192, 112 )
+position = Vector2( 64, 112 )
 wait_time = 2.0
 
 [node name="WaitTimer" parent="MovingPlatforms/LongPlatform" index="2"]
@@ -66,10 +63,7 @@ position = Vector2( 64, 112 )
 position = Vector2( 192, 112 )
 
 [node name="ShortPlatform" parent="MovingPlatforms" index="1" instance=ExtResource( 9 )]
-position = Vector2( 75.9256, 96 )
-
-[node name="Tween" parent="MovingPlatforms/ShortPlatform" index="3"]
-playback/active = true
+position = Vector2( 64.0863, 96 )
 
 [node name="TargetPoint" parent="MovingPlatforms/ShortPlatform/TargetPoints" index="0"]
 position = Vector2( 192, 96 )

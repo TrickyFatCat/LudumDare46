@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/environment/MainTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/interface/TransitionScreen.tscn" type="PackedScene" id=2]
@@ -6,10 +6,22 @@
 [ext_resource path="res://scenes/entities/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=5]
 [ext_resource path="res://scenes/entities/player/Egg.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/backgrounds/Pink.png" type="Texture" id=7]
+[ext_resource path="res://materials/matBackground.tres" type="Material" id=8]
 [ext_resource path="res://scenes/interface/HUD.tscn" type="PackedScene" id=9]
 
 [node name="LevelName" type="Node"]
 script = ExtResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = ExtResource( 8 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LevelSwitcher" parent="." instance=ExtResource( 3 )]
 
