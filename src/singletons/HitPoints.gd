@@ -1,5 +1,7 @@
 extends Node
 
+signal on_player_take_damage()
+signal on_egg_take_damage()
 signal on_player_zero_hitpoints()
 signal on_egg_zero_hitpoints()
 
@@ -20,7 +22,7 @@ func sync_hitpoitnts() -> void:
 
 func decrease_pleayer_hitpoints() -> void:
 	player_hitpoints -= 1
-	print("Player HP: " + String(player_hitpoints))
+	emit_signal("on_player_take_damage")
 	
 	if player_hitpoints <= 0:
 		emit_signal("on_player_zero_hitpoints")
@@ -28,7 +30,7 @@ func decrease_pleayer_hitpoints() -> void:
 
 func decrease_egg_hitpoints() -> void:
 	egg_hitpoints -= 1
-	print("Egg HP: " + String(egg_hitpoints))
+	emit_signal("on_egg_take_damage")
 	
 	if egg_hitpoints <= 0:
 		emit_signal("on_egg_zero_hitpoints")

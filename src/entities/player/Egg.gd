@@ -1,7 +1,7 @@
 class_name Egg
 extends Entity
 
-const MIN_DISTANCE = 96
+const MIN_DISTANCE = 256
 
 onready var Trigger : Area2D = $BaseTrigger
 

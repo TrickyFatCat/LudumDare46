@@ -3,11 +3,11 @@ extends Entity
 
 const JUMP_VELOCITY : float = 500.0
 const JUMP_GRAVITY : float = 1750.0
-const JMUP_BONUS_VELOCITY : float = 150.0
+const JMUP_BONUS_VELOCITY : float = 100.0
 const HURT_VELOCITY : float = 500.0
 const GROUND_ACCELERATION : float = 5000.0
 const AIR_ACCELERATION : float = 5000.0
-const THROW_TARGET : Vector2 = Vector2(512, 128)
+const THROW_TARGET : Vector2 = Vector2(512, 256)
 
 var is_holding_egg : bool = false
 var facing_direction : int = 1

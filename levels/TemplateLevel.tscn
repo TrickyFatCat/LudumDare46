@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/environment/MainTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/interface/TransitionScreen.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/entities/player/Egg.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/fonts/CompassPro.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://src/environment/BaseTrigger.gd" type="Script" id=8]
+[ext_resource path="res://scenes/interface/HUD.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 24 )
@@ -36,6 +37,11 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 9 )]
+anchor_bottom = 0.0
+margin_top = 5.0
+margin_bottom = 5.0
 
 [node name="TransitionScreen" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false

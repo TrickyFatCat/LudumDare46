@@ -56,7 +56,6 @@ func check_states() -> void:
 				set_state_idle()
 			
 			if !Parent.is_on_floor() and was_on_floor:
-				print("Coyote")
 				CoyoteTimer.start()
 				Parent.velocity.y = 0
 		states.jump:
