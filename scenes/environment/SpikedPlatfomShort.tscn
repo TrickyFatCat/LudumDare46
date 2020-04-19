@@ -15,12 +15,10 @@ animations = [ {
 extents = Vector2( 28, 9 )
 
 [node name="SpikedPlatfomShort" instance=ExtResource( 1 )]
-position = Vector2( -40, 0 )
 z_index = 0
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
-frame = 0
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 2 )

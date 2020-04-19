@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/environment/SpikedBall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/environment/platform_long.png" type="Texture" id=2]
+[ext_resource path="res://src/environment/Pendulum.gd" type="Script" id=3]
+
+[node name="Pendulum" type="Node2D"]
+script = ExtResource( 3 )
+max_angle = 180.0
+
+[node name="platform_long" type="Sprite" parent="."]
+position = Vector2( 0, 32 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+
+[node name="SpikedBall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 64 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

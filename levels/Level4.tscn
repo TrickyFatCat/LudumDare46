@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://levels/TemplateLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/environment/BonusFruit.tscn" type="PackedScene" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://scenes/environment/TargetPoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/environment/LongPlatform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/environment/SpikedPlatformLong.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/environment/Spikes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/environment/SpikedPlatfomShort.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/environment/ShortPlatform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/environment/SpikedBall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/environment/Pendulum.tscn" type="PackedScene" id=11]
 
 [node name="Level4" instance=ExtResource( 1 )]
 next_level = "res://levels/Level5.tscn"
@@ -22,60 +27,91 @@ position = Vector2( 104, 314 )
 [node name="Player" parent="." index="3"]
 position = Vector2( 44, 308 )
 
-[node name="Saw" parent="Traps" index="0" instance=ExtResource( 3 )]
-position = Vector2( 111.901, 256 )
-
-[node name="AnimatedSprite" parent="Traps/Saw" index="0"]
-frame = 4
-
-[node name="SawTargetPoint" parent="Traps/Saw/TargetPoints" index="0"]
-position = Vector2( 200, 184 )
-
-[node name="SawTargetPoint2" parent="Traps/Saw/TargetPoints" index="1"]
-position = Vector2( 200, 256 )
-
-[node name="SawTargetPoint3" parent="Traps/Saw/TargetPoints" index="2" instance=ExtResource( 4 )]
-position = Vector2( 111.901, 256 )
-
-[node name="SawTargetPoint4" parent="Traps/Saw/TargetPoints" index="3" instance=ExtResource( 4 )]
-position = Vector2( 111.901, 184 )
-
-[node name="SpikedPlatformLong" parent="Traps" index="1" instance=ExtResource( 6 )]
-position = Vector2( 248, 257.016 )
+[node name="SpikedPlatfomShort" parent="Traps" index="0" instance=ExtResource( 8 )]
+position = Vector2( 288, 64 )
 rotation = 1.5708
 
-[node name="Tween" parent="Traps/SpikedPlatformLong" index="3"]
-playback/active = false
+[node name="SawTargetPoint" parent="Traps/SpikedPlatfomShort/TargetPoints" index="0"]
+position = Vector2( 288, 256 )
+
+[node name="SawTargetPoint2" parent="Traps/SpikedPlatfomShort/TargetPoints" index="1"]
+position = Vector2( 288, 64 )
+
+[node name="Saw" parent="Traps" index="1" instance=ExtResource( 3 )]
+position = Vector2( 160, 176 )
+
+[node name="AnimatedSprite" parent="Traps/Saw" index="0"]
+frame = 5
+
+[node name="SawTargetPoint" parent="Traps/Saw/TargetPoints" index="0"]
+position = Vector2( 208, 176 )
+
+[node name="SawTargetPoint2" parent="Traps/Saw/TargetPoints" index="1"]
+position = Vector2( 208, 256 )
+
+[node name="SawTargetPoint3" parent="Traps/Saw/TargetPoints" index="2" instance=ExtResource( 4 )]
+position = Vector2( 160, 256 )
+
+[node name="SawTargetPoint4" parent="Traps/Saw/TargetPoints" index="3" instance=ExtResource( 4 )]
+position = Vector2( 160, 176 )
+
+[node name="SpikedPlatformLong" parent="Traps" index="2" instance=ExtResource( 6 )]
+position = Vector2( 256, 64 )
+rotation = 1.5708
 
 [node name="SawTargetPoint" parent="Traps/SpikedPlatformLong/TargetPoints" index="0"]
-position = Vector2( 248, 257.016 )
+position = Vector2( 256, 256 )
 
 [node name="SawTargetPoint2" parent="Traps/SpikedPlatformLong/TargetPoints" index="1"]
-position = Vector2( 248, 64 )
+position = Vector2( 256, 64 )
+
+[node name="Spikes" parent="Traps" index="3" instance=ExtResource( 7 )]
+position = Vector2( 176, 320 )
+
+[node name="SpikedBall" parent="Traps" index="4" instance=ExtResource( 10 )]
+position = Vector2( 64, 256 )
+
+[node name="Pendulum" parent="Traps" index="5" instance=ExtResource( 11 )]
+position = Vector2( 80, 144 )
+rotation = 0.768677
+max_angle = -45.0
 
 [node name="BonusFruit" parent="Fruits" index="0" instance=ExtResource( 2 )]
-position = Vector2( 262, 304 )
+position = Vector2( 144, 304 )
 
 [node name="LongPlatform" parent="MovingPlatforms" index="0" instance=ExtResource( 5 )]
-position = Vector2( 488, 304.099 )
+position = Vector2( 64, 112 )
 wait_time = 2.0
 
 [node name="WaitTimer" parent="MovingPlatforms/LongPlatform" index="2"]
 wait_time = 2.0
 
-[node name="Tween" parent="MovingPlatforms/LongPlatform" index="3"]
-playback/active = true
-
 [node name="TargetPoint" parent="MovingPlatforms/LongPlatform/TargetPoints" index="0"]
-position = Vector2( 368, 304.099 )
+position = Vector2( 64, 112 )
 
 [node name="TargetPoint2" parent="MovingPlatforms/LongPlatform/TargetPoints" index="1"]
-position = Vector2( 488, 304.099 )
+position = Vector2( 192, 112 )
+
+[node name="ShortPlatform" parent="MovingPlatforms" index="1" instance=ExtResource( 9 )]
+position = Vector2( 64, 96 )
+
+[node name="Tween" parent="MovingPlatforms/ShortPlatform" index="3"]
+playback/active = false
+
+[node name="TargetPoint" parent="MovingPlatforms/ShortPlatform/TargetPoints" index="0"]
+position = Vector2( 192, 96 )
+
+[node name="TargetPoint2" parent="MovingPlatforms/ShortPlatform/TargetPoints" index="1"]
+position = Vector2( 64, 96 )
 
 [editable path="LevelSwitcher"]
+
+[editable path="Traps/SpikedPlatfomShort"]
 
 [editable path="Traps/Saw"]
 
 [editable path="Traps/SpikedPlatformLong"]
 
 [editable path="MovingPlatforms/LongPlatform"]
+
+[editable path="MovingPlatforms/ShortPlatform"]
