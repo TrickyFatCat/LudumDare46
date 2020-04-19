@@ -56,10 +56,11 @@ GameManager="*res://src/singletons/GameManager.gd"
 Global="*res://src/singletons/Global.gd"
 Broadcaster="*res://src/singletons/Broadcaster.gd"
 InputHandler="*res://src/singletons/InputHandler.gd"
+PhysicsHelper="*res://src/singletons/PhysicsHelper.gd"
 LevelManager="*res://src/singletons/LevelManager.gd"
 Utility="*res://src/singletons/Utility.gd"
 MusicPlayer="*res://src/singletons/MusicPlayer.gd"
-PhysicsHelper="*res://src/singletons/PhysicsHelper.gd"
+HitPoints="*res://src/singletons/HitPoints.gd"
 
 [display]
 

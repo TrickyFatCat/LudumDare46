@@ -6,6 +6,10 @@ const MIN_DISTANCE = 96
 onready var Trigger : Area2D = $BaseTrigger
 
 
+func _ready() -> void:
+	Global.egg = self
+
+
 func _physics_process(delta) -> void:
 	apply_gravity(delta)
 	var collision = move_and_collide(velocity * delta)
@@ -31,4 +35,5 @@ func launch(target_position: Vector2) -> void:
 func _on_BaseTrigger_on_trigger_atcivation():
 	Global.player.set_is_holding_egg(true)
 	set_physics_process(false)
+	Global.egg = null
 	self.queue_free()
