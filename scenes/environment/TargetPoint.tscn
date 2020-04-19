@@ -2,7 +2,8 @@
 
 [ext_resource path="res://assets/environment/saw/Chain.png" type="Texture" id=1]
 
-[node name="SawTargetPoint" type="Node2D"]
+[node name="TargetPoint" type="Node2D"]
+z_index = -2
 
 [node name="Chain" type="Sprite" parent="."]
 texture = ExtResource( 1 )

@@ -11,11 +11,6 @@
 [node name="LevelName" type="Node"]
 script = ExtResource( 5 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-current = true
-zoom = Vector2( 2, 2 )
-
 [node name="LevelSwitcher" parent="." instance=ExtResource( 3 )]
 
 [node name="ColorRect" type="ColorRect" parent="LevelSwitcher"]
@@ -44,6 +39,8 @@ format = 1
 
 [node name="Fruits" type="Node" parent="."]
 
+[node name="MovingPlatforms" type="Node" parent="."]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 9 )]
@@ -53,6 +50,11 @@ margin_bottom = 5.0
 
 [node name="TransitionScreen" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 2, 2 )
 [connection signal="on_trigger_atcivation" from="LevelSwitcher" to="." method="_on_LevelSwitcher_on_trigger_atcivation"]
 [connection signal="on_screen_closed" from="CanvasLayer/TransitionScreen" to="." method="_on_TransitionScreen_on_screen_closed"]
 

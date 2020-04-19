@@ -43,9 +43,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DeathTrigger" parent="." index="8"]
-position = Vector2( -136, 80 )
-
 [node name="Label" type="Label" parent="CanvasLayer" index="0"]
 margin_left = 88.0
 margin_top = 32.0
