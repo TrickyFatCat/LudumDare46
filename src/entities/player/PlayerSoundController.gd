@@ -13,11 +13,17 @@ onready var EggDamageSound : AudioStreamPlayer = $EggDamage
 
 
 func _ready():
+# warning-ignore:return_value_discarded
 	HitPoints.connect("on_player_take_damage", self, "play_hit_sound")
+# warning-ignore:return_value_discarded
 	HitPoints.connect("on_egg_take_damage", self, "play_egg_damage_sound")
+# warning-ignore:return_value_discarded
 	Parent.connect("on_taking_egg", self, "play_take_sound")
+# warning-ignore:return_value_discarded
 	Parent.connect("on_throw_egg", self, "play_throw_sound")
+# warning-ignore:return_value_discarded
 	Parent.connect("on_jump", self, "play_jump_sound")
+# warning-ignore:return_value_discarded
 	Parent.connect("on_move", self, "play_step_sound")
 
 

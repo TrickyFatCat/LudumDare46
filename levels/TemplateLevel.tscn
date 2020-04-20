@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scenes/environment/MainTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/interface/TransitionScreen.tscn" type="PackedScene" id=2]
@@ -27,6 +27,8 @@
 [ext_resource path="res://assets/environment/start/start_06.png" type="Texture" id=25]
 [ext_resource path="res://assets/environment/start/start_00.png" type="Texture" id=26]
 [ext_resource path="res://sounds/player/nextLevel.wav" type="AudioStream" id=27]
+[ext_resource path="res://scenes/ScreenShake.tscn" type="PackedScene" id=28]
+[ext_resource path="res://src/baseScripts/CameraHandler.gd" type="Script" id=29]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 24 )
@@ -46,6 +48,7 @@ script = ExtResource( 5 )
 anchor_mode = 0
 current = true
 zoom = Vector2( 2, 2 )
+script = ExtResource( 29 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
 follow_viewport_enable = true
@@ -56,13 +59,17 @@ motion_scale = Vector2( 0.75, 1 )
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
 material = ExtResource( 8 )
-margin_right = 640.0
-margin_bottom = 360.0
+margin_left = -191.0
+margin_top = -173.0
+margin_right = 833.0
+margin_bottom = 851.0
 texture = ExtResource( 7 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ScreenShake" parent="Camera2D" instance=ExtResource( 28 )]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -89,7 +96,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelSwitcher"]
 frames = SubResource( 2 )
-frame = 1
+frame = 9
 playing = true
 offset = Vector2( -2, -8 )
 
