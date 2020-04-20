@@ -26,7 +26,7 @@ func _ready() -> void:
 # warning-ignore:return_value_discarded
 	HitPoints.connect("on_egg_zero_hitpoints", self, "restart_level")
 	
-	if !MusicPlayer.playing:
+	if !MusicPlayer.playing or MusicPlayer.stream != music and MusicPlayer.stream != load("res://sounds/music/gameOver.ogg"):
 		start_playing_music()
 
 func activate_close_transition() -> void:

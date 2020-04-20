@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=143 format=2]
 
 [ext_resource path="res://src/levels/FinishMenu.gd" type="Script" id=1]
 [ext_resource path="res://levels/TemplateLevel.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/interface/FinalResults.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/environment/exit.png" type="Texture" id=6]
 [ext_resource path="res://assets/tilesheets/terrain.png" type="Texture" id=7]
+[ext_resource path="res://sounds/music/menuMusic.ogg" type="AudioStream" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1464,6 +1465,7 @@ font_data = ExtResource( 4 )
 [node name="FinishMenu" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 next_level = "res://levels/Level1.tscn"
+music = ExtResource( 8 )
 
 [node name="Camera2D" parent="." index="0"]
 zoom = Vector2( 1, 1 )
@@ -1503,7 +1505,7 @@ position = Vector2( 294, 120 )
 is_require_egg = false
 
 [node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
-frame = 13
+frame = 1
 
 [node name="Egg" parent="." index="4"]
 position = Vector2( -136, 138 )
