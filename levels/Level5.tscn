@@ -1472,7 +1472,7 @@ position = Vector2( 216, 56 )
 
 [node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
 position = Vector2( 5, 1 )
-frame = 14
+frame = 1
 flip_h = true
 
 [node name="Egg" parent="." index="3"]
@@ -1587,7 +1587,7 @@ position = Vector2( 392, 139 )
 position = Vector2( 256, 2.33721 )
 
 [node name="AnimatedSprite" parent="Traps/Saw" index="0"]
-frame = 0
+frame = 4
 
 [node name="TargetPoint" parent="Traps/Saw/TargetPoints" index="0"]
 position = Vector2( 256, 0 )
@@ -1598,6 +1598,9 @@ position = Vector2( 256, 80 )
 [node name="Saw2" parent="Traps" index="12" instance=ExtResource( 6 )]
 position = Vector2( 316.26, 144 )
 
+[node name="AnimatedSprite" parent="Traps/Saw2" index="0"]
+frame = 3
+
 [node name="TargetPoint" parent="Traps/Saw2/TargetPoints" index="0"]
 position = Vector2( 192, 144 )
 
@@ -1606,6 +1609,9 @@ position = Vector2( 320, 144 )
 
 [node name="Saw3" parent="Traps" index="13" instance=ExtResource( 6 )]
 position = Vector2( 396.26, 112 )
+
+[node name="AnimatedSprite" parent="Traps/Saw3" index="0"]
+frame = 3
 
 [node name="TargetPoint" parent="Traps/Saw3/TargetPoints" index="0"]
 position = Vector2( 272, 112 )
@@ -1617,7 +1623,7 @@ position = Vector2( 400, 112 )
 position = Vector2( 441.87, 272 )
 
 [node name="AnimatedSprite" parent="Traps/Saw4" index="0"]
-frame = 6
+frame = 2
 
 [node name="TargetPoint" parent="Traps/Saw4/TargetPoints" index="0"]
 position = Vector2( 504, 272 )
