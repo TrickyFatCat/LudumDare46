@@ -1,6 +1,6 @@
 extends StateMachine
 
-const COYOTE_JUMP_TIME : float = 0.1
+const COYOTE_JUMP_TIME : float = 0.12
 
 var is_holding_egg : bool = false
 var was_on_floor : bool = false

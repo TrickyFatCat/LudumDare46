@@ -1564,9 +1564,6 @@ frame = 5
 [node name="WaitTimer" parent="Traps/Saw" index="2"]
 wait_time = 0.75
 
-[node name="Tween" parent="Traps/Saw" index="3"]
-playback/active = true
-
 [node name="TargetPoint" parent="Traps/Saw/TargetPoints" index="0"]
 position = Vector2( 608, 152.016 )
 
@@ -1583,9 +1580,6 @@ frame = 4
 [node name="WaitTimer" parent="Traps/Saw2" index="2"]
 wait_time = 0.75
 
-[node name="Tween" parent="Traps/Saw2" index="3"]
-playback/active = true
-
 [node name="TargetPoint" parent="Traps/Saw2/TargetPoints" index="0"]
 position = Vector2( 480, 0 )
 
@@ -1600,10 +1594,7 @@ wait_time = 0.25
 frame = 4
 
 [node name="WaitTimer" parent="Traps/Saw3" index="2"]
-wait_time = 0.75
-
-[node name="Tween" parent="Traps/Saw3" index="3"]
-playback/active = true
+wait_time = 0.25
 
 [node name="TargetPoint" parent="Traps/Saw3/TargetPoints" index="0"]
 position = Vector2( 80, 32 )

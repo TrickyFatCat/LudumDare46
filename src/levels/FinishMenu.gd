@@ -2,6 +2,7 @@ extends Level
 
 
 func _ready() -> void:
+# warning-ignore:return_value_discarded
 	MusicPlayer.connect("finished", self, "start_playing_music")
 
 
