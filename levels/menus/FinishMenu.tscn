@@ -1505,7 +1505,7 @@ position = Vector2( 294, 120 )
 is_require_egg = false
 
 [node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
-frame = 1
+frame = 3
 
 [node name="Egg" parent="." index="4"]
 position = Vector2( -136, 138 )

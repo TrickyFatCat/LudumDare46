@@ -1472,9 +1472,6 @@ tile_data = PoolIntArray( -262144, 8, 0, -262143, 8, 1, -262142, 8, 1, -262141, 
 [node name="LevelSwitcher" parent="." index="2"]
 position = Vector2( 392, 72 )
 
-[node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
-frame = 0
-
 [node name="Egg" parent="." index="3"]
 position = Vector2( 128, 314 )
 
@@ -1483,29 +1480,26 @@ position = Vector2( 13, 308 )
 
 [node name="Pendulum" parent="Traps" index="0" instance=ExtResource( 11 )]
 position = Vector2( 128, 240 )
-rotation = -0.69012
 fluctuation_time = 1.25
 
 [node name="Pendulum2" parent="Traps" index="1" instance=ExtResource( 11 )]
 position = Vector2( 352, 240 )
-rotation = 0.69012
+rotation = 0.785398
 fluctuation_time = 1.25
 min_angle = -45.0
 max_angle = 45.0
 
 [node name="Pendulum3" parent="Traps" index="2" instance=ExtResource( 11 )]
 position = Vector2( 448, 240 )
-rotation = -0.69012
 fluctuation_time = 1.25
 
 [node name="Pendulum4" parent="Traps" index="3" instance=ExtResource( 11 )]
 position = Vector2( 384, 128 )
-rotation = -0.69012
 fluctuation_time = 1.25
 
 [node name="Pendulum5" parent="Traps" index="4" instance=ExtResource( 11 )]
 position = Vector2( 288, 128 )
-rotation = 0.69012
+rotation = 0.785398
 fluctuation_time = 1.25
 min_angle = -45.0
 max_angle = 45.0
@@ -1555,11 +1549,11 @@ position = Vector2( 432, 89 )
 rotation = -7.85398
 
 [node name="Saw" parent="Traps" index="16" instance=ExtResource( 5 )]
-position = Vector2( 608, 152.016 )
+position = Vector2( 608, 58.8051 )
 wait_time = 0.75
 
 [node name="AnimatedSprite" parent="Traps/Saw" index="0"]
-frame = 5
+frame = 7
 
 [node name="WaitTimer" parent="Traps/Saw" index="2"]
 wait_time = 0.75
@@ -1573,11 +1567,11 @@ visible = false
 position = Vector2( 608, 56 )
 
 [node name="Saw2" parent="Traps" index="17" instance=ExtResource( 5 )]
-position = Vector2( 480, 0 )
+position = Vector2( 480, 100.962 )
 wait_time = 0.75
 
 [node name="AnimatedSprite" parent="Traps/Saw2" index="0"]
-frame = 4
+frame = 6
 
 [node name="WaitTimer" parent="Traps/Saw2" index="2"]
 wait_time = 0.75
@@ -1591,17 +1585,14 @@ visible = false
 position = Vector2( 480, 104 )
 
 [node name="Saw3" parent="Traps" index="18" instance=ExtResource( 5 )]
-position = Vector2( 145.158, 32 )
+position = Vector2( 80, 32 )
 wait_time = 0.25
 
 [node name="AnimatedSprite" parent="Traps/Saw3" index="0"]
-frame = 4
+frame = 6
 
 [node name="WaitTimer" parent="Traps/Saw3" index="2"]
 wait_time = 0.25
-
-[node name="Tween" parent="Traps/Saw3" index="3"]
-playback/active = true
 
 [node name="TargetPoint" parent="Traps/Saw3/TargetPoints" index="0"]
 visible = false
