@@ -30,7 +30,7 @@ func _ready():
 func _physics_process(delta) -> void:
 	was_on_floor = Parent.is_on_floor()
 	
-	if state == states.idle or state == states.run or state == states.fall:
+	if state == states.idle or state == states.run or state == states.fall or state == states.jump:
 		Parent.calculate_direction_x()
 		SpriteNode.flip_sprite(Parent.direction)
 		

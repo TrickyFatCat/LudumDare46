@@ -1467,7 +1467,7 @@ tile_data = PoolIntArray( 0, 5, 0, 38, 5, 0, 131072, 5, 0, 131110, 5, 0, 262144,
 position = Vector2( 584, 296 )
 
 [node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
-frame = 13
+frame = 4
 
 [node name="Egg" parent="." index="3"]
 position = Vector2( 88, 314 )
@@ -1491,7 +1491,7 @@ position = Vector2( 304, 320 )
 position = Vector2( 320, 320 )
 
 [node name="SpikedPlatformLong" parent="Traps" index="5" instance=ExtResource( 6 )]
-position = Vector2( 250.053, 128 )
+position = Vector2( 128.002, 128 )
 rotation = 1.5708
 z_index = 1
 travel_time = 12.0
@@ -1508,7 +1508,7 @@ position = Vector2( 256, 128 )
 
 [node name="Pendulum" parent="Traps" index="6" instance=ExtResource( 7 )]
 position = Vector2( 384, 80 )
-rotation = 1.5708
+rotation = -1.40448
 fluctuation_time = 1.25
 min_angle = -90.0
 max_angle = 90.0
@@ -1539,7 +1539,7 @@ position = Vector2( 158, 265 )
 position = Vector2( 220, 259 )
 
 [node name="LongPlatform" parent="MovingPlatforms" index="0" instance=ExtResource( 2 )]
-position = Vector2( 143, 314 )
+position = Vector2( 142.235, 232.871 )
 wait_time = 3.0
 is_cycled = false
 

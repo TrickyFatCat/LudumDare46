@@ -13,6 +13,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [node name="HUD" type="Control"]
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
@@ -22,22 +23,21 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
-margin_bottom = 17.0
+margin_left = 5.0
+margin_top = -18.0
 custom_constants/separation = 5
-alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
-margin_left = 107.0
-margin_right = 139.0
-margin_bottom = 17.0
+margin_right = 32.0
+margin_bottom = 18.0
 custom_constants/separation = 2
 
 [node name="HeartIcon" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
 margin_right = 17.0
-margin_bottom = 17.0
+margin_bottom = 18.0
 texture = ExtResource( 3 )
 stretch_mode = 4
 
@@ -50,14 +50,14 @@ custom_fonts/font = SubResource( 1 )
 text = "x 3"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
-margin_left = 144.0
-margin_right = 175.0
-margin_bottom = 17.0
+margin_left = 37.0
+margin_right = 68.0
+margin_bottom = 18.0
 custom_constants/separation = 2
 
 [node name="EggIcon" type="TextureRect" parent="HBoxContainer/HBoxContainer2"]
 margin_right = 16.0
-margin_bottom = 17.0
+margin_bottom = 18.0
 texture = ExtResource( 1 )
 stretch_mode = 4
 
@@ -70,14 +70,14 @@ custom_fonts/font = SubResource( 1 )
 text = "x 3"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer"]
-margin_left = 180.0
-margin_right = 212.0
-margin_bottom = 17.0
+margin_left = 73.0
+margin_right = 105.0
+margin_bottom = 18.0
 custom_constants/separation = 2
 
 [node name="FruitIcon" type="TextureRect" parent="HBoxContainer/HBoxContainer3"]
 margin_right = 17.0
-margin_bottom = 17.0
+margin_bottom = 18.0
 texture = ExtResource( 5 )
 stretch_mode = 4
 

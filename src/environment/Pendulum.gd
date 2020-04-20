@@ -1,6 +1,7 @@
 tool
 extends Node2D
 
+export(bool) var is_linear_movement = false
 export(float) var fluctuation_time = 1.0
 export(float) var min_angle = 45.0
 export(float) var max_angle = -45.0
@@ -13,8 +14,14 @@ func _ready() -> void:
 
 
 func start_fluctuation(initial_rotation: float, target_rotation: float) -> void:
+	var tween_type
+	
+	if is_linear_movement:
+		tween_type = Tween.TRANS_LINEAR
+	else:
+		tween_type = Tween.TRANS_QUINT
 # warning-ignore:return_value_discarded
-	TweenNode.interpolate_property(self, "rotation_degrees", initial_rotation, target_rotation, fluctuation_time, Tween.TRANS_QUINT, Tween.EASE_IN_OUT)
+	TweenNode.interpolate_property(self, "rotation_degrees", initial_rotation, target_rotation, fluctuation_time, tween_type, Tween.EASE_IN_OUT)
 # warning-ignore:return_value_discarded
 	TweenNode.start()
 

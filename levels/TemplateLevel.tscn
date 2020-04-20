@@ -98,7 +98,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelSwitcher"]
 frames = SubResource( 2 )
-frame = 3
+frame = 9
 playing = true
 offset = Vector2( -2, -8 )
 
@@ -118,9 +118,8 @@ position = Vector2( 1, 0 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 9 )]
-anchor_bottom = 0.0
-margin_top = 5.0
-margin_bottom = 5.0
+margin_top = -1.0
+margin_bottom = -1.0
 
 [node name="TransitionScreen" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false

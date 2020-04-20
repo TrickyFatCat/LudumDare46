@@ -5,7 +5,7 @@
 [ext_resource path="res://src/environment/Pendulum.gd" type="Script" id=3]
 
 [node name="Pendulum" type="Node2D"]
-rotation = -0.0991959
+rotation = -0.785398
 script = ExtResource( 3 )
 
 [node name="platform_long" type="Sprite" parent="."]
@@ -15,9 +15,6 @@ texture = ExtResource( 2 )
 
 [node name="SpikedBall" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 56 )
-collision_layer = 2
-collision_mask = 17
 
 [node name="Tween" type="Tween" parent="."]
-playback/active = true
 [connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

@@ -2,6 +2,7 @@ tool
 extends KinematicBody2D
 
 export(bool) var is_moving = true
+export(bool) var is_linear_movement = false
 export(float) var travel_time = 1.0
 export(float) var wait_time = 1.0
 export(bool) var is_cycled = true
@@ -21,7 +22,14 @@ func _ready():
 
 
 func start_tween(target_position: Vector2) -> void:
-	TweenNode.interpolate_property(self, "position", global_position, target_position, travel_time, Tween.TRANS_QUINT, Tween.EASE_IN_OUT)
+	var tween_type
+	
+	if is_linear_movement:
+		tween_type = Tween.TRANS_LINEAR
+	else:
+		tween_type = Tween.TRANS_QUINT
+	
+	TweenNode.interpolate_property(self, "position", global_position, target_position, travel_time, tween_type, Tween.EASE_IN_OUT)
 	TweenNode.start()
 
 
