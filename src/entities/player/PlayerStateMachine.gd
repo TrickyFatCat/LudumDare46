@@ -77,7 +77,6 @@ func check_states() -> void:
 			set_state_fall()
 			pass
 		states.death:
-			print("dead")
 			pass
 
 

@@ -2,8 +2,8 @@ extends Area2D
 
 signal on_trigger_atcivation()
 
-const NORMAL_HINT : String = "Press F"
-const ERROR_HINT : String = "Bring the egg"
+const NORMAL_HINT : String = "Press E"
+const ERROR_HINT : String = "NO EGG"
 
 export(bool) var is_require_egg = true
 export(bool) var is_require_interaction = true
