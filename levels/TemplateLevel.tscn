@@ -96,7 +96,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelSwitcher"]
 frames = SubResource( 2 )
-frame = 9
+frame = 4
 playing = true
 offset = Vector2( -2, -8 )
 

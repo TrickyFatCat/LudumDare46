@@ -12,6 +12,8 @@ onready var Duration : Timer = $Duration
 onready var TweenShake : Tween = $ShakeTween
 
 
+# warning-ignore:shadowed_variable
+# warning-ignore:shadowed_variable
 func start(duration: float = 0.2, frequency: float = 15, amplitude: int = 16, priority: int = 0) -> void:
 	if priority >= self.priority:
 		self.amplitude = amplitude
@@ -26,12 +28,16 @@ func _new_shake() -> void:
 	var rand = Vector2.ZERO
 	rand.x = rand_range(-amplitude, amplitude)
 	rand.y = rand_range(-amplitude, amplitude)
+# warning-ignore:return_value_discarded
 	TweenShake.interpolate_property(CameraNode, "offset", CameraNode.offset, rand, Frequency.wait_time, TRANS, EASE)
+# warning-ignore:return_value_discarded
 	TweenShake.start()
 
 
 func _reset() -> void:
+# warning-ignore:return_value_discarded
 	TweenShake.interpolate_property(CameraNode, "offset", CameraNode.offset, Vector2.ZERO, Frequency.wait_time, TRANS, EASE)
+# warning-ignore:return_value_discarded
 	TweenShake.start()
 	priority = 0
 

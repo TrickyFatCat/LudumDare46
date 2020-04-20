@@ -6,6 +6,7 @@ signal on_load_next_level()
 export(String, FILE, "*.tscn") var next_level
 
 var is_lost : bool = false
+var is_closing : bool = false
 var player_start_position : Vector2
 var egg_start_position : Vector2
 
@@ -38,6 +39,8 @@ func restart_level() -> void:
 func _on_TransitionScreen_on_screen_closed():
 	if is_lost:
 		LevelManager.load_finish_menu()
+	elif is_closing:
+		get_tree().quit()
 	else:
 		emit_signal("on_load_next_level")
 		yield(get_tree().create_timer(1.4), "timeout")
@@ -45,6 +48,7 @@ func _on_TransitionScreen_on_screen_closed():
 
 
 func _on_LevelSwitcher_on_trigger_atcivation():
+	is_closing = false
 	if Global.player.is_holding_egg or !LevelSwitcher.is_require_egg:
 		activate_close_transition()
 		Utility.play_sound(NextLevelSound)

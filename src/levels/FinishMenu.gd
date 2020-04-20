@@ -2,7 +2,8 @@ extends Level
 
 
 func _on_ExitGame_on_trigger_atcivation():
-	get_tree().quit()
+	is_closing = true
+	activate_close_transition()
 
 
 func _on_FinishMenu_on_load_next_level():
