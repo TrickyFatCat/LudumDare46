@@ -30,7 +30,7 @@
 [ext_resource path="res://scenes/ScreenShake.tscn" type="PackedScene" id=28]
 [ext_resource path="res://src/baseScripts/CameraHandler.gd" type="Script" id=29]
 [ext_resource path="res://sounds/music/levelMusic.ogg" type="AudioStream" id=30]
-[ext_resource path="res://levels/TextureSwapper.gd" type="Script" id=31]
+[ext_resource path="res://src/TextureSwapper.gd" type="Script" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 24 )
@@ -100,7 +100,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelSwitcher"]
 frames = SubResource( 2 )
-frame = 5
+frame = 16
 playing = true
 offset = Vector2( -2, -8 )
 

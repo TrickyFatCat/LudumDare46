@@ -1485,20 +1485,23 @@ __meta__ = {
 }
 
 [node name="Exit" type="Label" parent="HBoxContainer" index="0"]
-margin_left = 50.0
-margin_right = 85.0
+margin_left = 58.0
+margin_right = 93.0
 margin_bottom = 15.0
 custom_fonts/font = SubResource( 133 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "< Exit"
 
 [node name="Restart" type="Label" parent="HBoxContainer" index="1"]
-margin_left = 213.0
-margin_right = 269.0
+margin_left = 221.0
+margin_right = 262.0
 margin_bottom = 15.0
 custom_fonts/font = SubResource( 133 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Restart >"
+text = "Start >"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LevelSwitcher" parent="." index="3"]
 position = Vector2( 294, 120 )

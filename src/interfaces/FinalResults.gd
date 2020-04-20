@@ -4,4 +4,4 @@ onready var FruitCounter : Label = $FruitCounter
 
 
 func _ready() -> void:
-	FruitCounter.text = "x " + String(PointsHandler.points)
+	FruitCounter.text = String(PointsHandler.points) + "/85"

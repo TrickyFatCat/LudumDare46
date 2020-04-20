@@ -1472,7 +1472,7 @@ tile_data = PoolIntArray( -65519, 8, 0, -65518, 8, 1, -65517, 8, 1, -65516, 8, 1
 position = Vector2( 294, 120 )
 
 [node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
-frame = 1
+frame = 0
 
 [node name="Egg" parent="." index="3"]
 position = Vector2( 157, 138 )
