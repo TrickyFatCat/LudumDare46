@@ -5,7 +5,7 @@
 [ext_resource path="res://src/environment/Pendulum.gd" type="Script" id=3]
 
 [node name="Pendulum" type="Node2D"]
-rotation = 0.784989
+rotation = 0.11725
 script = ExtResource( 3 )
 
 [node name="platform_long" type="Sprite" parent="."]

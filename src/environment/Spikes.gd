@@ -5,7 +5,8 @@ func _ready():
 
 
 func _on_Spikes_body_entered(body):
-	if body is Player:
-		HitPoints.decrease_pleayer_hitpoints()
-	if body is Egg:
-		HitPoints.decrease_egg_hitpoints()
+	if !HitPoints.is_low_hitpoints():
+		if body is Player:
+			HitPoints.decrease_pleayer_hitpoints()
+		if body is Egg:
+			HitPoints.decrease_egg_hitpoints()

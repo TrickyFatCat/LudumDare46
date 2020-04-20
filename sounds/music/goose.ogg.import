@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/goose.ogg-5f6a89f4e74079917edf0890f0a2e3f9.oggstr"
+
+[deps]
+
+source_file="res://sounds/music/goose.ogg"
+dest_files=[ "res://.import/goose.ogg-5f6a89f4e74079917edf0890f0a2e3f9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

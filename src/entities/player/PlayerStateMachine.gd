@@ -12,21 +12,25 @@ onready var CoyoteTimer : Timer = $CoyoteTimer
 func _ready():
 # warning-ignore:return_value_discarded
 	HitPoints.connect("on_player_take_damage", self, "set_state_stunlock")
+# warning-ignore:return_value_discarded
+	HitPoints.connect("on_egg_zero_hitpoints", self, "set_state_death")
+# warning-ignore:return_value_discarded
+	HitPoints.connect("on_player_zero_hitpoints", self, "set_state_death")
 	CoyoteTimer.wait_time = COYOTE_JUMP_TIME
 	add_state("idle")
 	add_state("run")
 	add_state("jump")
 	add_state("fall")
-	add_state("dash")
 	add_state("stunlock")
 	add_state("death")
-	set_state_idle()
+	add_state("transition")
+	set_state_transition()
 
 
 func _physics_process(delta) -> void:
 	was_on_floor = Parent.is_on_floor()
 	
-	if state == states.idle or state == states.run or state == states.fall or state == states.dash:
+	if state == states.idle or state == states.run or state == states.fall:
 		Parent.calculate_direction_x()
 		SpriteNode.flip_sprite(Parent.direction)
 		
@@ -69,12 +73,11 @@ func check_states() -> void:
 					Parent.velocity.x = 0
 				else:
 					set_state_run()
-		states.dash:
-			pass
 		states.stunlock:
 			set_state_fall()
 			pass
 		states.death:
+			print("dead")
 			pass
 
 
@@ -110,15 +113,19 @@ func set_state_stunlock() -> void:
 	Parent.activate_stunlock_jump()
 
 
+func set_state_death() -> void:
+	set_state(states.death)
+	SpriteNode.play("death")
+	Parent.direction.x = 0
 
 
+func set_state_transition() -> void:
+	set_state(states.transition)
+	SpriteNode.play("idle")
+	Parent.direction.x = 0
 
 
-
-
-
-
-
-
+func is_dead_or_transited() -> bool:
+	return state == states.death or state == states.transition
 
 

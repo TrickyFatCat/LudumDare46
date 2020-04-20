@@ -8,6 +8,7 @@ onready var LudumSplash : TextureRect = $LudumSplash
 onready var TeamSplash : TextureRect = $TeamSplash
 onready var current_splash : TextureRect = LudumSplash
 onready var TransitionEffect : ColorRect = $TransitionEffect
+onready var GooseSound : AudioStreamPlayer = $GooseSound
 
 
 func _ready() -> void:
@@ -32,6 +33,7 @@ func _on_TransitionEffect_on_screen_opened():
 		SplashWait.start()
 	else:
 		SplashWait.start()
+		GooseSound.play()
 
 
 func _on_TransitionEffect_on_screen_closed():

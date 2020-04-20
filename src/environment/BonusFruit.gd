@@ -10,7 +10,7 @@ onready var CollectSound : AudioStreamPlayer = $CollectSound
 
 # warning-ignore:unused_argument
 func _on_BonusFruit_body_entered(body):
-	if SpriteNode.animation != "collect":
+	if SpriteNode.animation != "collect" and !HitPoints.is_low_hitpoints():
 		PointsHandler.increase_points(POINTS_COST)
 		CollectSound.play()
 		SpriteNode.play("collect")

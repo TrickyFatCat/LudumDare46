@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/environment/MainTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/interface/TransitionScreen.tscn" type="PackedScene" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://sounds/player/nextLevel.wav" type="AudioStream" id=27]
 [ext_resource path="res://scenes/ScreenShake.tscn" type="PackedScene" id=28]
 [ext_resource path="res://src/baseScripts/CameraHandler.gd" type="Script" id=29]
+[ext_resource path="res://sounds/music/levelMusic.ogg" type="AudioStream" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 24 )
@@ -43,6 +44,7 @@ animations = [ {
 
 [node name="LevelName" type="Node"]
 script = ExtResource( 5 )
+music = ExtResource( 30 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -96,7 +98,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelSwitcher"]
 frames = SubResource( 2 )
-frame = 4
+frame = 1
 playing = true
 offset = Vector2( -2, -8 )
 
@@ -127,5 +129,6 @@ visible = false
 stream = ExtResource( 27 )
 [connection signal="on_trigger_atcivation" from="LevelSwitcher" to="." method="_on_LevelSwitcher_on_trigger_atcivation"]
 [connection signal="on_screen_closed" from="CanvasLayer/TransitionScreen" to="." method="_on_TransitionScreen_on_screen_closed"]
+[connection signal="on_screen_opened" from="CanvasLayer/TransitionScreen" to="." method="_on_TransitionScreen_on_screen_opened"]
 
 [editable path="LevelSwitcher"]

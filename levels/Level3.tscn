@@ -1475,7 +1475,7 @@ tile_data = PoolIntArray( 65534, 9, 0, 65535, 9, 2, 0, 1, 65537, 1, 1, 65538, 2,
 position = Vector2( 293.902, 104 )
 
 [node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
-frame = 10
+frame = 9
 
 [node name="Egg" parent="." index="3"]
 position = Vector2( 128, 58 )
@@ -1484,15 +1484,12 @@ position = Vector2( 128, 58 )
 position = Vector2( 12, 148 )
 
 [node name="Saw" parent="Traps" index="0" instance=ExtResource( 2 )]
-position = Vector2( 201.722, 160 )
+position = Vector2( 208, 160 )
 travel_time = 1.5
 wait_time = 1.5
 
 [node name="AnimatedSprite" parent="Traps/Saw" index="0"]
-frame = 1
-
-[node name="Tween" parent="Traps/Saw" index="3"]
-playback/active = true
+frame = 0
 
 [node name="TargetPoint" parent="Traps/Saw/TargetPoints" index="0"]
 visible = false
@@ -1504,11 +1501,11 @@ position = Vector2( 208, 160 )
 
 [node name="Saw2" parent="Traps" index="1" instance=ExtResource( 2 )]
 position = Vector2( 288, 80 )
-travel_time = 1.0
-wait_time = 1.5
+travel_time = 0.75
+wait_time = 1.25
 
 [node name="AnimatedSprite" parent="Traps/Saw2" index="0"]
-frame = 0
+frame = 7
 
 [node name="WaitTimer" parent="Traps/Saw2" index="2"]
 wait_time = 1.5

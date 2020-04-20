@@ -39,3 +39,7 @@ func decrease_egg_hitpoints() -> void:
 	
 	if egg_hitpoints <= 0:
 		emit_signal("on_egg_zero_hitpoints")
+
+
+func is_low_hitpoints() -> bool:
+	return player_hitpoints < 0 or egg_hitpoints < 0

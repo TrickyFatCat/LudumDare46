@@ -15,10 +15,11 @@ onready var Hint : Label = $Hint
 
 # warning-ignore:unused_argument
 func _process(delta):
-	if is_player_inside and InputHandler.is_interact_pressed():
+	if is_player_inside and InputHandler.is_interact_pressed() and !Global.player.StateMachineNode.is_dead_or_transited():
 		emit_signal("on_trigger_atcivation")
 
 	set_hint_text()
+
 
 func set_hint_text() -> void:
 	if is_require_egg and !is_player_holding_egg():

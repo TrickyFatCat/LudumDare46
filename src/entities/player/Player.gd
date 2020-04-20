@@ -30,7 +30,7 @@ func _ready() -> void:
 
 # warning-ignore:unused_argument
 func _input(event):
-	if InputHandler.is_shoot_pressed() and is_holding_egg:
+	if InputHandler.is_shoot_pressed() and is_holding_egg and !StateMachineNode.is_dead_or_transited():
 		throw_egg(THROW_VELOCITY)
 
 

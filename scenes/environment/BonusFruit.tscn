@@ -52,7 +52,7 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 14
+frame = 16
 playing = true
 
 [node name="CollectSound" type="AudioStreamPlayer" parent="."]
