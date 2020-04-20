@@ -48,8 +48,12 @@ zoom = Vector2( 2, 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
 follow_viewport_enable = true
+scroll_ignore_camera_zoom = true
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_scale = Vector2( 0.75, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
 material = ExtResource( 8 )
 margin_right = 640.0
 margin_bottom = 360.0
@@ -84,6 +88,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelSwitcher"]
 frames = SubResource( 2 )
+frame = 2
 playing = true
 offset = Vector2( -2, -8 )
 

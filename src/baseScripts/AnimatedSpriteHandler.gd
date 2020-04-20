@@ -18,7 +18,6 @@ func flip_sprite(direction: Vector2) -> void:
 
 func activate_blinking() -> void:
 	if is_blinking_active:
-		print("Activate blinking")
 # warning-ignore:return_value_discarded
 		TweenNode.interpolate_property(self, "self_modulate", DAMAGE_COLOR, NORMAL_COLOR, BLINK_TIME, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 # warning-ignore:return_value_discarded
