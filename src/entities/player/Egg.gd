@@ -10,6 +10,7 @@ onready var Trigger : Area2D = $BaseTrigger
 
 func _ready() -> void:
 	Global.egg = self
+# warning-ignore:return_value_discarded
 	HitPoints.connect("on_egg_take_damage", self, "on_damage_taken")
 
 

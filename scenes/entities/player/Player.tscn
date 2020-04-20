@@ -90,7 +90,6 @@ acceleration = 0.0
 position = Vector2( 0, -4 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 5
 playing = true
 
 [node name="EggSprite" type="Sprite" parent="." index="1"]

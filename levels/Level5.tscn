@@ -1505,7 +1505,7 @@ position = Vector2( 256, 128 )
 
 [node name="Pendulum" parent="Traps" index="6" instance=ExtResource( 7 )]
 position = Vector2( 384, 80 )
-rotation = -1.5708
+rotation = 1.56701
 fluctuation_time = 1.25
 min_angle = -90.0
 max_angle = 90.0
@@ -1536,7 +1536,7 @@ position = Vector2( 158, 265 )
 position = Vector2( 220, 259 )
 
 [node name="LongPlatform" parent="MovingPlatforms" index="0" instance=ExtResource( 2 )]
-position = Vector2( 224, 314 )
+position = Vector2( 143, 314 )
 wait_time = 3.0
 is_cycled = false
 
