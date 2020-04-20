@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/environment/SpikedBall.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/environment/platform_long.png" type="Texture" id=2]
+[ext_resource path="res://assets/environment/chain.png" type="Texture" id=2]
 [ext_resource path="res://src/environment/Pendulum.gd" type="Script" id=3]
 
 [node name="Pendulum" type="Node2D"]
+rotation = 0.784989
 script = ExtResource( 3 )
 
 [node name="platform_long" type="Sprite" parent="."]

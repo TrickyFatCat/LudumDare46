@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dust Particle.png-b2c5d93de4d839a02d0103fae4d2e76f.stex"
+path="res://.import/chain.png-5bf7d2fe249bb06d78894eb072787e61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dust Particle.png"
-dest_files=[ "res://.import/Dust Particle.png-b2c5d93de4d839a02d0103fae4d2e76f.stex" ]
+source_file="res://assets/environment/chain.png"
+dest_files=[ "res://.import/chain.png-5bf7d2fe249bb06d78894eb072787e61.stex" ]
 
 [params]
 

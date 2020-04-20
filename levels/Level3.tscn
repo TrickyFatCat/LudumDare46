@@ -1,7 +1,7 @@
 [gd_scene load_steps=140 format=2]
 
 [ext_resource path="res://levels/TemplateLevel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/environment/Spikes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/environment/Saw.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/environment/BonusFruit.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/tilesheets/terrain.png" type="Texture" id=4]
 [ext_resource path="res://materials/BackgroundShader.shader" type="Shader" id=5]
@@ -1469,41 +1469,81 @@ texture = ExtResource( 6 )
 
 [node name="TileMap" parent="." index="1"]
 tile_set = SubResource( 133 )
-tile_data = PoolIntArray( 65534, 9, 0, 65535, 9, 2, 0, 1, 65537, 1, 1, 65538, 2, 5, 0, 18, 12, 3, 19, 10, 0, 20, 10, 1, 21, 10, 2, 131070, 9, 65536, 131071, 9, 65538, 65536, 1, 131073, 65537, 1, 131074, 65554, 12, 65539, 65555, 10, 65536, 65556, 10, 65537, 65557, 10, 65538, 196606, 9, 65536, 196607, 9, 65538, 131072, 14, 65537, 131073, 14, 65538, 131090, 12, 131075, 131091, 10, 131072, 131092, 10, 131073, 131093, 10, 131074, 262142, 9, 65536, 262143, 9, 65538, 196608, 14, 131073, 196609, 14, 131074, 196626, 1, 0, 196627, 1, 1, 196628, 1, 1, 196629, 1, 2, 327678, 9, 131072, 327679, 9, 131074, 262144, 1, 65536, 262145, 12, 65536, 262162, 14, 0, 262163, 14, 1, 262164, 14, 1, 262165, 14, 2, 393214, 14, 0, 393215, 14, 1, 327680, 14, 1, 327681, 14, 2, 327698, 2, 0, 327700, 11, 0, 327701, 11, 2, 458750, 13, 0, 458751, 13, 1, 393216, 13, 1, 393217, 13, 2, 393235, 4, 0, 393236, 11, 65536, 393237, 11, 65538, 524286, 11, 0, 524287, 11, 2, 458771, 4, 0, 458772, 11, 131072, 458773, 11, 131074, 589822, 11, 65536, 589823, 11, 65538, 524288, 5, 0, 524302, 6, 0, 524303, 6, 1, 524304, 6, 1, 524305, 6, 1, 524306, 6, 1, 524307, 6, 1, 524308, 6, 1, 524309, 6, 2, 655358, 11, 131072, 655359, 11, 131074, 589838, 6, 65536, 589839, 6, 65537, 589840, 6, 65537, 589841, 6, 65537, 589842, 6, 65537, 589843, 6, 65537, 589844, 6, 65537, 589845, 6, 65538, 720894, 0, 0, 720895, 0, 1, 655360, 0, 1, 655361, 0, 1, 655362, 0, 1, 655363, 0, 1, 655364, 0, 1, 655365, 0, 1, 655366, 0, 1, 655367, 0, 1, 655368, 0, 1, 655369, 0, 1, 655370, 0, 1, 655371, 0, 1, 655372, 0, 1, 655373, 0, 2, 655374, 6, 65536, 655375, 6, 65537, 655376, 6, 65537, 655377, 6, 65537, 655378, 6, 65537, 655379, 6, 65537, 655380, 6, 65537, 655381, 6, 65538, 786430, 0, 131072, 786431, 0, 131073, 720896, 0, 131073, 720897, 0, 131073, 720898, 0, 131073, 720899, 0, 131073, 720900, 0, 131073, 720901, 0, 131073, 720902, 0, 131073, 720903, 0, 131073, 720904, 0, 131073, 720905, 0, 131073, 720906, 0, 131073, 720907, 0, 131073, 720908, 0, 131073, 720909, 0, 131074, 720910, 6, 131072, 720911, 6, 131073, 720912, 6, 131073, 720913, 6, 131073, 720914, 6, 131073, 720915, 6, 131073, 720916, 6, 131073, 720917, 6, 131074 )
+tile_data = PoolIntArray( 65534, 9, 0, 65535, 9, 2, 0, 1, 65537, 1, 1, 65538, 2, 5, 0, 18, 12, 3, 19, 10, 0, 20, 10, 1, 21, 10, 2, 131070, 9, 65536, 131071, 9, 65538, 65536, 1, 131073, 65537, 1, 131074, 65554, 12, 65539, 65555, 10, 65536, 65556, 10, 65537, 65557, 10, 65538, 196606, 9, 65536, 196607, 9, 65538, 131072, 14, 65537, 131073, 14, 65538, 131090, 12, 131075, 131091, 10, 131072, 131092, 10, 131073, 131093, 10, 131074, 262142, 9, 65536, 262143, 9, 65538, 196608, 14, 131073, 196609, 14, 131074, 196626, 1, 0, 196627, 1, 1, 196628, 1, 1, 196629, 1, 2, 327678, 9, 131072, 327679, 9, 131074, 262144, 1, 65536, 262145, 12, 65536, 262150, 7, 0, 262151, 7, 1, 262152, 7, 1, 262153, 7, 2, 262162, 14, 0, 262163, 14, 1, 262164, 14, 1, 262165, 14, 2, 393214, 14, 0, 393215, 14, 1, 327680, 14, 1, 327681, 14, 2, 327686, 7, 131072, 327687, 7, 131073, 327688, 7, 131073, 327689, 7, 131074, 327698, 2, 0, 327700, 11, 0, 327701, 11, 2, 458750, 13, 0, 458751, 13, 1, 393216, 13, 1, 393217, 13, 2, 393235, 4, 0, 393236, 11, 65536, 393237, 11, 65538, 524286, 11, 0, 524287, 11, 2, 458771, 4, 0, 458772, 11, 131072, 458773, 11, 131074, 589822, 11, 65536, 589823, 11, 65538, 524288, 5, 0, 524302, 6, 0, 524303, 6, 1, 524304, 6, 1, 524305, 6, 1, 524306, 6, 1, 524307, 6, 1, 524308, 6, 1, 524309, 6, 2, 655358, 11, 131072, 655359, 11, 131074, 589838, 6, 65536, 589839, 6, 65537, 589840, 6, 65537, 589841, 6, 65537, 589842, 6, 65537, 589843, 6, 65537, 589844, 6, 65537, 589845, 6, 65538, 720894, 0, 0, 720895, 0, 1, 655360, 0, 1, 655361, 0, 1, 655362, 0, 1, 655363, 0, 1, 655364, 0, 1, 655365, 0, 1, 655366, 0, 1, 655367, 0, 1, 655368, 0, 1, 655369, 0, 1, 655370, 0, 1, 655371, 0, 1, 655372, 0, 1, 655373, 0, 2, 655374, 6, 65536, 655375, 6, 65537, 655376, 6, 65537, 655377, 6, 65537, 655378, 6, 65537, 655379, 6, 65537, 655380, 6, 65537, 655381, 6, 65538, 786430, 0, 131072, 786431, 0, 131073, 720896, 0, 131073, 720897, 0, 131073, 720898, 0, 131073, 720899, 0, 131073, 720900, 0, 131073, 720901, 0, 131073, 720902, 0, 131073, 720903, 0, 131073, 720904, 0, 131073, 720905, 0, 131073, 720906, 0, 131073, 720907, 0, 131073, 720908, 0, 131073, 720909, 0, 131074, 720910, 6, 131072, 720911, 6, 131073, 720912, 6, 131073, 720913, 6, 131073, 720914, 6, 131073, 720915, 6, 131073, 720916, 6, 131073, 720917, 6, 131074 )
 
 [node name="LevelSwitcher" parent="." index="2"]
 position = Vector2( 293.902, 104 )
 
 [node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
-frame = 0
+frame = 10
 
 [node name="Egg" parent="." index="3"]
-position = Vector2( 88, 154 )
+position = Vector2( 128, 58 )
 
 [node name="Player" parent="." index="4"]
-position = Vector2( 44, 148 )
+position = Vector2( 12, 148 )
 
-[node name="Spikes" parent="Traps" index="0" instance=ExtResource( 2 )]
-position = Vector2( 119, 160.099 )
+[node name="Saw" parent="Traps" index="0" instance=ExtResource( 2 )]
+position = Vector2( 201.722, 160 )
+travel_time = 1.5
+wait_time = 1.5
 
-[node name="Spikes2" parent="Traps" index="1" instance=ExtResource( 2 )]
-position = Vector2( 135.902, 160.099 )
+[node name="AnimatedSprite" parent="Traps/Saw" index="0"]
+frame = 1
 
-[node name="Spikes3" parent="Traps" index="2" instance=ExtResource( 2 )]
-position = Vector2( 152, 160.099 )
+[node name="Tween" parent="Traps/Saw" index="3"]
+playback/active = true
 
-[node name="Spikes4" parent="Traps" index="3" instance=ExtResource( 2 )]
-position = Vector2( 224, 153 )
-rotation = -1.57079
+[node name="TargetPoint" parent="Traps/Saw/TargetPoints" index="0"]
+visible = false
+position = Vector2( 48, 160 )
 
-[node name="Spikes5" parent="Traps" index="4" instance=ExtResource( 2 )]
-position = Vector2( 224, 139 )
-rotation = -1.57079
+[node name="TargetPoint2" parent="Traps/Saw/TargetPoints" index="1"]
+visible = false
+position = Vector2( 208, 160 )
+
+[node name="Saw2" parent="Traps" index="1" instance=ExtResource( 2 )]
+position = Vector2( 288, 80 )
+travel_time = 1.0
+wait_time = 1.5
+
+[node name="AnimatedSprite" parent="Traps/Saw2" index="0"]
+frame = 0
+
+[node name="WaitTimer" parent="Traps/Saw2" index="2"]
+wait_time = 1.5
+
+[node name="TargetPoint" parent="Traps/Saw2/TargetPoints" index="0"]
+visible = false
+position = Vector2( 288, 0 )
+
+[node name="TargetPoint2" parent="Traps/Saw2/TargetPoints" index="1"]
+visible = false
+position = Vector2( 288, 80 )
 
 [node name="BonusFruit" parent="Fruits" index="0" instance=ExtResource( 3 )]
-position = Vector2( 186, 146 )
+position = Vector2( 128, 112 )
 
 [node name="BonusFruit2" parent="Fruits" index="1" instance=ExtResource( 3 )]
-position = Vector2( 221, 106 )
+position = Vector2( 240, 80 )
+
+[node name="BonusFruit3" parent="Fruits" index="2" instance=ExtResource( 3 )]
+position = Vector2( 128, 32 )
+
+[node name="BonusFruit4" parent="Fruits" index="3" instance=ExtResource( 3 )]
+position = Vector2( 48, 32 )
+
+[node name="BonusFruit5" parent="Fruits" index="4" instance=ExtResource( 3 )]
+position = Vector2( 64, 16 )
+
+[node name="BonusFruit6" parent="Fruits" index="5" instance=ExtResource( 3 )]
+position = Vector2( 80, 32 )
+
+[node name="BonusFruit7" parent="Fruits" index="6" instance=ExtResource( 3 )]
+position = Vector2( 64, 48 )
 
 [editable path="LevelSwitcher"]
+
+[editable path="Traps/Saw"]
+
+[editable path="Traps/Saw2"]
