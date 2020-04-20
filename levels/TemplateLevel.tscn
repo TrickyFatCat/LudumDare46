@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scenes/environment/MainTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/interface/TransitionScreen.tscn" type="PackedScene" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://scenes/ScreenShake.tscn" type="PackedScene" id=28]
 [ext_resource path="res://src/baseScripts/CameraHandler.gd" type="Script" id=29]
 [ext_resource path="res://sounds/music/levelMusic.ogg" type="AudioStream" id=30]
+[ext_resource path="res://levels/TextureSwapper.gd" type="Script" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 24 )
@@ -67,6 +68,7 @@ margin_right = 833.0
 margin_bottom = 851.0
 texture = ExtResource( 7 )
 stretch_mode = 2
+script = ExtResource( 31 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -98,7 +100,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelSwitcher"]
 frames = SubResource( 2 )
-frame = 10
+frame = 5
 playing = true
 offset = Vector2( -2, -8 )
 
