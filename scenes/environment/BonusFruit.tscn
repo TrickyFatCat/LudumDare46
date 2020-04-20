@@ -44,6 +44,7 @@ animations = [ {
 } ]
 
 [node name="BonusFruit" type="Area2D"]
+z_index = -1
 collision_layer = 8
 script = ExtResource( 18 )
 
@@ -52,7 +53,7 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 16
+frame = 1
 playing = true
 
 [node name="CollectSound" type="AudioStreamPlayer" parent="."]

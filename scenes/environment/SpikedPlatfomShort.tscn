@@ -15,7 +15,6 @@ animations = [ {
 extents = Vector2( 28, 9 )
 
 [node name="SpikedPlatfomShort" instance=ExtResource( 1 )]
-is_moving = false
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
