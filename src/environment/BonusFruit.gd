@@ -1,9 +1,27 @@
 extends Area2D
 
-export(int) var points_cost = 1
+const POINTS_COST : int = 1
+
+var is_active : bool = true
+
+onready var SpriteNode : AnimatedSprite = $AnimatedSprite
+onready var CollectSound : AudioStreamPlayer = $CollectSound
 
 
 # warning-ignore:unused_argument
 func _on_BonusFruit_body_entered(body):
-	PointsHandler.increase_points(points_cost)
+	if SpriteNode.animation != "collect":
+		PointsHandler.increase_points(POINTS_COST)
+		CollectSound.play()
+		SpriteNode.play("collect")
+#		is_active = false
+
+
+func _on_CollectSound_finished():
 	queue_free()
+
+
+func _on_AnimatedSprite_animation_finished():
+	if SpriteNode.animation == "collect":
+		SpriteNode.stop()
+		SpriteNode.hide()

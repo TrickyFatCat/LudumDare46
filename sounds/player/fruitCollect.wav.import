@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fruitCollect.wav-b92ed878ec3a2d47975de281df38558f.sample"
+
+[deps]
+
+source_file="res://sounds/player/fruitCollect.wav"
+dest_files=[ "res://.import/fruitCollect.wav-b92ed878ec3a2d47975de281df38558f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

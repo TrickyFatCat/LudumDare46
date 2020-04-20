@@ -7,7 +7,7 @@
 extents = Vector2( 32, 4.5 )
 
 [node name="LongPlatform" instance=ExtResource( 2 )]
-position = Vector2( -39.9875, 0 )
+position = Vector2( -39.7273, 0 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 1 )

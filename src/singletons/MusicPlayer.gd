@@ -6,6 +6,7 @@ var previous_track_index : int = -1
 
 
 func _ready() -> void:
+	volume_db = -12
 # warning-ignore:return_value_discarded
 	connect("finished", self, "play_new_track")
 # warning-ignore:return_value_discarded

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scenes/environment/MainTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/interface/TransitionScreen.tscn" type="PackedScene" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://assets/environment/start/start_03.png" type="Texture" id=24]
 [ext_resource path="res://assets/environment/start/start_06.png" type="Texture" id=25]
 [ext_resource path="res://assets/environment/start/start_00.png" type="Texture" id=26]
+[ext_resource path="res://sounds/player/nextLevel.wav" type="AudioStream" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 24 )
@@ -88,7 +89,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelSwitcher"]
 frames = SubResource( 2 )
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( -2, -8 )
 
@@ -114,6 +115,9 @@ margin_bottom = 5.0
 
 [node name="TransitionScreen" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
+
+[node name="NextLevelSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
 [connection signal="on_trigger_atcivation" from="LevelSwitcher" to="." method="_on_LevelSwitcher_on_trigger_atcivation"]
 [connection signal="on_screen_closed" from="CanvasLayer/TransitionScreen" to="." method="_on_TransitionScreen_on_screen_closed"]
 

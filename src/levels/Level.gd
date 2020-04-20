@@ -12,6 +12,7 @@ var egg_start_position : Vector2
 onready var TransitionScreen : ColorRect = $CanvasLayer/TransitionScreen
 onready var LevelSwitcher : Area2D = $LevelSwitcher
 onready var egg_scene = preload("res://scenes/entities/player/Egg.tscn")
+onready var NextLevelSound : AudioStreamPlayer = $NextLevelSound
 
 
 func _ready() -> void:
@@ -46,3 +47,4 @@ func _on_TransitionScreen_on_screen_closed():
 func _on_LevelSwitcher_on_trigger_atcivation():
 	if Global.player.is_holding_egg or !LevelSwitcher.is_require_egg:
 		activate_close_transition()
+		Utility.play_sound(NextLevelSound)

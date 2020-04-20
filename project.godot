@@ -53,13 +53,13 @@ config/icon="res://icon.png"
 [autoload]
 
 GameManager="*res://src/singletons/GameManager.gd"
+MusicPlayer="*res://src/singletons/MusicPlayer.gd"
 Global="*res://src/singletons/Global.gd"
 Broadcaster="*res://src/singletons/Broadcaster.gd"
 InputHandler="*res://src/singletons/InputHandler.gd"
 PhysicsHelper="*res://src/singletons/PhysicsHelper.gd"
 LevelManager="*res://src/singletons/LevelManager.gd"
 Utility="*res://src/singletons/Utility.gd"
-MusicPlayer="*res://src/singletons/MusicPlayer.gd"
 HitPoints="*res://src/singletons/HitPoints.gd"
 PointsHandler="*res://src/singletons/PointsHandler.gd"
 

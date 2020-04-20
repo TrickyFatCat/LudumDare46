@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/eggDamage.wav-6c3dee655cafcb45f3d7d401f27d17d3.sample"
+
+[deps]
+
+source_file="res://sounds/player/eggDamage.wav"
+dest_files=[ "res://.import/eggDamage.wav-6c3dee655cafcb45f3d7d401f27d17d3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

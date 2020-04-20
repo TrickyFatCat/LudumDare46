@@ -1,6 +1,11 @@
 class_name Player
 extends Entity
 
+signal on_taking_egg()
+signal on_throw_egg()
+signal on_jump()
+signal on_move()
+
 const JUMP_VELOCITY : float = 500.0
 const JUMP_GRAVITY : float = 1750.0
 const JMUP_BONUS_VELOCITY : float = 100.0
@@ -37,6 +42,7 @@ func calculate_velocity_x(delta: float, direction: Vector2) -> void:
 	if direction.x != 0 and abs(velocity.x) <= max_velocity:
 		velocity.x += acceleration * direction.x * delta
 		velocity.x = clamp(velocity.x, -max_velocity, max_velocity)
+		emit_signal("on_move")
 	elif velocity.x != 0 or abs(velocity.x) > max_velocity:
 		direction.x = -sign(velocity.x)
 		velocity.x += friction * direction.x * delta
@@ -65,6 +71,7 @@ func activate_jump() -> void:
 	gravity = JUMP_GRAVITY
 	velocity.x += JMUP_BONUS_VELOCITY * direction.x
 	velocity.y = -JUMP_VELOCITY
+	emit_signal("on_jump")
 
 
 func set_is_holding_egg(value: bool) -> void:
@@ -72,8 +79,10 @@ func set_is_holding_egg(value: bool) -> void:
 	
 	if is_holding_egg:
 		EggSprite.show()
+		emit_signal("on_taking_egg")
 	else:
 		EggSprite.hide()
+		emit_signal("on_throw_egg")
 
 
 func activate_stunlock_jump() -> void:

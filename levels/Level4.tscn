@@ -22,7 +22,7 @@ tile_data = PoolIntArray( 0, 4, 0, 1, 4, 0, 38, 1, 0, 39, 1, 2, 65536, 4, 0, 655
 position = Vector2( 584, 296 )
 
 [node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
-frame = 6
+frame = 14
 
 [node name="Egg" parent="." index="3"]
 position = Vector2( 104, 314 )
@@ -38,13 +38,13 @@ position = Vector2( 64, 256 )
 
 [node name="Pendulum" parent="Traps" index="2" instance=ExtResource( 11 )]
 position = Vector2( 96, 144 )
-rotation = 0.78482
+rotation = 0.751507
 
 [node name="Saw" parent="Traps" index="3" instance=ExtResource( 3 )]
-position = Vector2( 320, 44 )
+position = Vector2( 377.213, 47.5758 )
 
 [node name="AnimatedSprite" parent="Traps/Saw" index="0"]
-frame = 6
+frame = 0
 
 [node name="TargetPoint" parent="Traps/Saw/TargetPoints" index="0"]
 position = Vector2( 384, 48 )
@@ -56,7 +56,7 @@ position = Vector2( 320, 44 )
 position = Vector2( 144, 304 )
 
 [node name="LongPlatform" parent="MovingPlatforms" index="0" instance=ExtResource( 5 )]
-position = Vector2( 192, 112 )
+position = Vector2( 171.028, 112 )
 wait_time = 2.0
 
 [node name="WaitTimer" parent="MovingPlatforms/LongPlatform" index="2"]
@@ -69,7 +69,7 @@ position = Vector2( 64, 112 )
 position = Vector2( 192, 112 )
 
 [node name="ShortPlatform" parent="MovingPlatforms" index="1" instance=ExtResource( 9 )]
-position = Vector2( 64, 96 )
+position = Vector2( 178.427, 96 )
 
 [node name="TargetPoint" parent="MovingPlatforms/ShortPlatform/TargetPoints" index="0"]
 position = Vector2( 192, 96 )
