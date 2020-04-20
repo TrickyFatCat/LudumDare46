@@ -44,11 +44,12 @@ _global_script_class_icons={
 
 [application]
 
-config/name="LudumDare46"
+config/name="platformeGG"
 config/description="A game which were made by a Titled Goose Team during LudumDare 46."
 run/main_scene="res://levels/menus/SplashScreen.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+config/icon="res://assets/interface/app_icon.png"
+config/windows_native_icon="res://assets/interface/icon_win.ico"
 
 [autoload]
 
