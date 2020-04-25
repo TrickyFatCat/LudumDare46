@@ -43,6 +43,8 @@
 [ext_resource path="res://sounds/player/eggDamage.wav" type="AudioStream" id=41]
 [ext_resource path="res://sounds/player/step.wav" type="AudioStream" id=42]
 
+
+
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 20 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 27 ), ExtResource( 18 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 19 ) ],

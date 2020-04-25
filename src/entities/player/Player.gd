@@ -9,10 +9,10 @@ signal on_move()
 const JUMP_VELOCITY : float = 450.0
 const JUMP_GRAVITY : float = 1750.0
 const JMUP_BONUS_VELOCITY : float = 100.0
-const STUNLOCK_VELOCITY : float = 300.0
-const STUNLOCK_JUMP_VELOCITY : float = 400.0
+const STUNLOCK_VELOCITY : float = 350.0
+const STUNLOCK_JUMP_VELOCITY : float = 450.0
 const GROUND_ACCELERATION : float = 5000.0
-const AIR_ACCELERATION : float = 5000.0
+const AIR_ACCELERATION : float = 7000.0
 const THROW_TARGET : Vector2 = Vector2(512, 256)
 const THROW_VELOCITY : float = 750.0
 const STUNLOCK_THROW_VELOCITY : float = 500.0
@@ -69,7 +69,7 @@ func calculate_friction() -> void:
 
 func activate_jump() -> void:
 	gravity = JUMP_GRAVITY
-	velocity.x += JMUP_BONUS_VELOCITY * direction.x
+#	velocity.x += JMUP_BONUS_VELOCITY * direction.x
 	velocity.y = -JUMP_VELOCITY
 	emit_signal("on_jump")
 

@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 const GROUND_FRICTION : float = 2500.0
 const BASE_GRAVITY : float = 3500.0
-const AIR_FRICTION : float = 50.0
+const AIR_FRICTION : float = 100.0
 const INVULNERABILITY_TIME : float = 1.25
 
 export(float) var max_velocity = 500
