@@ -1471,8 +1471,11 @@ tile_data = PoolIntArray( -65519, 8, 0, -65518, 8, 1, -65517, 8, 1, -65516, 8, 1
 [node name="LevelSwitcher" parent="." index="2"]
 position = Vector2( 294, 120 )
 
+[node name="CollisionShape2D" parent="LevelSwitcher" index="0"]
+position = Vector2( 10, 0 )
+
 [node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
-frame = 0
+frame = 8
 
 [node name="Egg" parent="." index="3"]
 position = Vector2( 157, 138 )
