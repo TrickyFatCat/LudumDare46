@@ -1508,6 +1508,10 @@ __meta__ = {
 [node name="LevelSwitcher" parent="." index="3"]
 position = Vector2( 294, 120 )
 is_require_egg = false
+is_require_interaction = true
+
+[node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
+frame = 4
 
 [node name="Egg" parent="." index="4"]
 position = Vector2( -136, 138.199 )

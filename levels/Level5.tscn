@@ -1473,7 +1473,7 @@ position = Vector2( 216, 56 )
 
 [node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
 position = Vector2( 5, 1 )
-frame = 3
+frame = 15
 flip_h = true
 
 [node name="Egg" parent="." index="3"]
@@ -1483,8 +1483,14 @@ position = Vector2( 23, 314 )
 position = Vector2( 12, 36 )
 
 [node name="SpikedPlatformLong" parent="Traps" index="0" instance=ExtResource( 2 )]
-position = Vector2( 12, 112 )
+position = Vector2( 165, 112 )
 rotation = 1.5708
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="TargetPoint" parent="Traps/SpikedPlatformLong/TargetPoints" index="0"]
 visible = false
@@ -1495,7 +1501,13 @@ visible = false
 position = Vector2( 165, 112 )
 
 [node name="SpikedPlatformLong2" parent="Traps" index="1" instance=ExtResource( 2 )]
-position = Vector2( 80, 325 )
+position = Vector2( 81, 235 )
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="TargetPoint" parent="Traps/SpikedPlatformLong2/TargetPoints" index="0"]
 visible = false
@@ -1506,7 +1518,13 @@ visible = false
 position = Vector2( 81, 235 )
 
 [node name="SpikedPlatformLong3" parent="Traps" index="2" instance=ExtResource( 2 )]
-position = Vector2( 192, 235 )
+position = Vector2( 192, 325 )
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="TargetPoint" parent="Traps/SpikedPlatformLong3/TargetPoints" index="0"]
 visible = false
@@ -1517,7 +1535,13 @@ visible = false
 position = Vector2( 192, 325 )
 
 [node name="SpikedPlatformLong4" parent="Traps" index="3" instance=ExtResource( 2 )]
-position = Vector2( 304, 325 )
+position = Vector2( 304, 235 )
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="TargetPoint" parent="Traps/SpikedPlatformLong4/TargetPoints" index="0"]
 visible = false
@@ -1528,8 +1552,14 @@ visible = false
 position = Vector2( 304, 235 )
 
 [node name="SpikedPlatformLong5" parent="Traps" index="4" instance=ExtResource( 2 )]
-position = Vector2( 606, 256 )
+position = Vector2( 640, 256 )
 rotation = 1.5708
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="TargetPoint" parent="Traps/SpikedPlatformLong5/TargetPoints" index="0"]
 visible = false
@@ -1540,8 +1570,14 @@ visible = false
 position = Vector2( 640, 256 )
 
 [node name="SpikedPlatformLong6" parent="Traps" index="5" instance=ExtResource( 2 )]
-position = Vector2( 606, 160 )
+position = Vector2( 640, 160 )
 rotation = 1.5708
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="TargetPoint" parent="Traps/SpikedPlatformLong6/TargetPoints" index="0"]
 visible = false
@@ -1552,8 +1588,14 @@ visible = false
 position = Vector2( 640, 160 )
 
 [node name="SpikedPlatformLong7" parent="Traps" index="6" instance=ExtResource( 2 )]
-position = Vector2( 606, 64 )
+position = Vector2( 640, 64 )
 rotation = 1.5708
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="TargetPoint" parent="Traps/SpikedPlatformLong7/TargetPoints" index="0"]
 visible = false
@@ -1564,8 +1606,14 @@ visible = false
 position = Vector2( 640, 64 )
 
 [node name="SpikedPlatformLong8" parent="Traps" index="7" instance=ExtResource( 2 )]
-position = Vector2( 464, 112 )
+position = Vector2( 498, 112 )
 rotation = 1.5708
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="TargetPoint" parent="Traps/SpikedPlatformLong8/TargetPoints" index="0"]
 visible = false
@@ -1576,8 +1624,14 @@ visible = false
 position = Vector2( 498, 112 )
 
 [node name="SpikedPlatformLong9" parent="Traps" index="8" instance=ExtResource( 2 )]
-position = Vector2( 464, 208 )
+position = Vector2( 498, 208 )
 rotation = 1.5708
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="TargetPoint" parent="Traps/SpikedPlatformLong9/TargetPoints" index="0"]
 visible = false
@@ -1589,13 +1643,20 @@ position = Vector2( 498, 208 )
 
 [node name="Pendulum" parent="Traps" index="9" instance=ExtResource( 4 )]
 position = Vector2( 88, 144 )
-rotation = -1.87253e-06
+rotation = -1.54032
+is_linear_movement = false
 fluctuation_time = 1.1
 min_angle = 90.0
 max_angle = -90.0
 
 [node name="SpikedPlatfomShort" parent="Traps" index="10" instance=ExtResource( 5 )]
-position = Vector2( 392, 235 )
+position = Vector2( 392, 139 )
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="TargetPoint" parent="Traps/SpikedPlatfomShort/TargetPoints" index="0"]
 visible = false
@@ -1606,10 +1667,16 @@ visible = false
 position = Vector2( 392, 139 )
 
 [node name="Saw" parent="Traps" index="11" instance=ExtResource( 6 )]
-position = Vector2( 256, 1.64623e-06 )
+position = Vector2( 256, 80 )
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="AnimatedSprite" parent="Traps/Saw" index="0"]
-frame = 2
+frame = 1
 
 [node name="TargetPoint" parent="Traps/Saw/TargetPoints" index="0"]
 visible = false
@@ -1620,10 +1687,16 @@ visible = false
 position = Vector2( 256, 80 )
 
 [node name="Saw2" parent="Traps" index="12" instance=ExtResource( 6 )]
-position = Vector2( 192, 144 )
+position = Vector2( 320, 144 )
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="AnimatedSprite" parent="Traps/Saw2" index="0"]
-frame = 1
+frame = 0
 
 [node name="TargetPoint" parent="Traps/Saw2/TargetPoints" index="0"]
 visible = false
@@ -1634,10 +1707,16 @@ visible = false
 position = Vector2( 320, 144 )
 
 [node name="Saw3" parent="Traps" index="13" instance=ExtResource( 6 )]
-position = Vector2( 272, 112 )
+position = Vector2( 400, 112 )
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="AnimatedSprite" parent="Traps/Saw3" index="0"]
-frame = 1
+frame = 0
 
 [node name="TargetPoint" parent="Traps/Saw3/TargetPoints" index="0"]
 visible = false
@@ -1648,10 +1727,13 @@ visible = false
 position = Vector2( 400, 112 )
 
 [node name="Saw4" parent="Traps" index="14" instance=ExtResource( 6 )]
-position = Vector2( 504, 272 )
-
-[node name="AnimatedSprite" parent="Traps/Saw4" index="0"]
-frame = 0
+position = Vector2( 440, 272 )
+is_moving = true
+is_linear_movement = false
+travel_time = 1.0
+wait_time = 1.0
+is_cycled = true
+one_way = false
 
 [node name="TargetPoint" parent="Traps/Saw4/TargetPoints" index="0"]
 visible = false

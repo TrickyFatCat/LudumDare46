@@ -33,7 +33,7 @@
 [ext_resource path="res://src/TextureSwapper.gd" type="Script" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25, 24 )
+extents = Vector2( 16, 24 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -82,6 +82,7 @@ collision_layer = 4
 format = 1
 
 [node name="LevelSwitcher" parent="." instance=ExtResource( 3 )]
+is_require_interaction = false
 
 [node name="CollisionShape2D" parent="LevelSwitcher" index="0"]
 position = Vector2( 1, 0 )
@@ -100,7 +101,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="LevelSwitcher"]
 frames = SubResource( 2 )
-frame = 16
+frame = 5
 playing = true
 offset = Vector2( -2, -8 )
 

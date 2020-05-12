@@ -2,7 +2,7 @@ extends Area2D
 
 signal on_trigger_atcivation()
 
-const NORMAL_HINT : String = "Press E"
+const NORMAL_HINT : String = "Press Z"
 const ERROR_HINT : String = "NO EGG"
 
 export(bool) var is_require_egg = true
@@ -15,8 +15,11 @@ onready var Hint : Label = $Hint
 
 # warning-ignore:unused_argument
 func _process(delta):
-	if is_player_inside and InputHandler.is_interact_pressed() and !Global.player.StateMachineNode.is_dead_or_transited():
-		emit_signal("on_trigger_atcivation")
+	if is_player_inside and !Global.player.StateMachineNode.is_dead_or_transited():
+		if !is_require_interaction:
+			emit_signal("on_trigger_atcivation")
+		elif InputHandler.is_interact_pressed():
+			emit_signal("on_trigger_atcivation")
 
 	set_hint_text()
 
