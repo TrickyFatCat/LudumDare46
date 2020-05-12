@@ -1473,7 +1473,7 @@ tile_data = PoolIntArray( -65538, 8, 0, -65537, 8, 1, -131072, 8, 1, -131071, 8,
 position = Vector2( 294, 120 )
 
 [node name="AnimatedSprite" parent="LevelSwitcher" index="3"]
-frame = 4
+frame = 12
 
 [node name="Egg" parent="." index="3"]
 position = Vector2( 92, 138 )
@@ -1505,7 +1505,7 @@ margin_bottom = -41.0
 custom_fonts/font = SubResource( 133 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "You can't jump with the egg.
-Press LMB or Shift to throw."
+Press X to throw."
 align = 1
 valign = 1
 __meta__ = {

@@ -44,7 +44,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="platformeGG"
+config/name="platformEGG"
 config/description="A game which were made by a Titled Goose Team during LudumDare 46."
 run/main_scene="res://levels/menus/SplashScreen.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
@@ -68,8 +68,8 @@ PointsHandler="*res://src/singletons/PointsHandler.gd"
 
 window/size/width=320
 window/size/height=180
-window/size/test_width=640
-window/size/test_height=360
+window/size/test_width=1280
+window/size/test_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
